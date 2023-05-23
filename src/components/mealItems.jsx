@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, getMeal, addFavorite } from "../redux/slice/mealSlice";
-import "./mealItems.css";
+import "./style.css";
 import { NavLink } from "react-router-dom";
 import { Favorite, FavoriteBorder, SnippetFolder } from "@mui/icons-material";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
@@ -55,18 +55,20 @@ const Mealitems = () => {
   //   dispatch(addFavorite(item));
   // };
   return (
-    <>
+    <div className="main-container">
       <div className="heading-box">
         <h2 className="food-heading">Food Items</h2>
-        <NavLink to="/FavoriteItem">
-          <button className="Fvt-btn">Favorite Item</button>
-        </NavLink>
-        <NavLink to="/CartItem">
-          <button className="view-btn">
-            <span>items: {getTotalQuantity() || 0}</span>
-            <span>View Bag</span>
-          </button>
-        </NavLink>
+        <div className="Links-btn">
+          <NavLink to="/FavoriteItem">
+            <button className="Fvt-btn">Favorite Item</button>
+          </NavLink>
+          <NavLink to="/CartItem">
+            <button className="view-btn">
+              <span>items: {getTotalQuantity() || 0}</span>
+              <span>View Bag</span>
+            </button>
+          </NavLink>
+        </div>
       </div>
       <div className="meal-container">
         {mealdetails?.data?.meals?.map((item, index) => (
@@ -84,7 +86,11 @@ const Mealitems = () => {
                 //   dispatch(addFavorite(item), setFavorite(!isFavorite))
                 // }
               >
-                <Favorite />
+                <Favorite sx={{
+                  "&.MuiSvgIcon-root":{
+                    fontSize:"2rem"
+                  }
+                }}/>
               </div>
               {/* <div
               className={`isFavorite ${item.isFavorite ? "active" : ""}`}
@@ -115,7 +121,7 @@ const Mealitems = () => {
           </div>
         ))}
       </div>
-    </>
+    </div>
   );
 };
 

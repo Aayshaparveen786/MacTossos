@@ -10,7 +10,6 @@ export const getMeal = createAsyncThunk("getMeal", async () => {
   );
   // console.log("response", response);
   return response.json();
-
 });
 const mealSlice = createSlice({
   name: "meal",
@@ -65,17 +64,6 @@ const mealSlice = createSlice({
       );
       state.cart = removeItem;
     },
-    setSearchQuery: (state, action) => {
-      // const item = action.payload;
-      // state.cart.push(item);
-      
-      // const item = action.payload;
-      // state.cart.push(item);
-      // console.log("get",item );
-      state.data = action.payload;
-      console.log("SearchItem", action);
-      return state;
-    },
   },
 
   extraReducers: (builder) => {
@@ -100,7 +88,6 @@ export const {
   removeItem,
   addFavorite,
   removeFavorite,
-  setSearchQuery
 } = mealSlice.actions;
 
 // addItems: (state, action) => {

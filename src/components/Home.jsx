@@ -1,5 +1,5 @@
 import React from "react";
-import "./mealItems.css"
+import "./style.css"
 import Mealitems from "./mealItems";
 import { NavLink } from "react-router-dom";
 const Home = () => {

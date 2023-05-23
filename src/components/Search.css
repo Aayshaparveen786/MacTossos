@@ -103,3 +103,28 @@ body {
   color: white;
   margin: 0 5px 0 5px;
 }
+
+
+/* Responsive */
+@media  (max-width :600px){
+.main{
+  width: 100%;
+}
+.search-bar{
+  font-size: 30px;
+}
+.container{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.card img{
+  width: 100%;
+  margin-left: 0rem;
+}
+.card{
+  width: 280px;
+}
+}
+

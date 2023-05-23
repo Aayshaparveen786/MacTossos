@@ -9,7 +9,7 @@ const FavoriteItem = () => {
 
   return (
     <>
-      <h2>FavoriteItem</h2>
+      <h2 className="fvt-item">FavoriteItem</h2>
       {mealdetails?.cart?.map((item, index) => (
         <div key={index} className="food-items">
           <ul>

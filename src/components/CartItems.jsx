@@ -24,14 +24,16 @@ const CartItem = ({ quantity = 0 }) => {
             </ul>
             <div className="cartItem__incrDec">
               <button
+                className="incrDec-btn"
                 onClick={() => dispatch(decrementQuantity(mealdetails.item))}
               >
                 -
               </button>
               {/* <p>{quantity}</p> */}
-              <p>{item.quantity}</p>
+              <p className="num">{item.quantity}</p>
 
               <button
+                className="incrDec-btn"
                 onClick={() => dispatch(incrementQuantity(mealdetails.item))}
               >
                 +
