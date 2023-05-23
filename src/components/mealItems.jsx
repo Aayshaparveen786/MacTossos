@@ -61,9 +61,9 @@ const Mealitems = () => {
         <NavLink to="/FavoriteItem">
           <button className="Fvt-btn">Favorite Item</button>
         </NavLink>
-        <NavLink to="/AddItems">
+        <NavLink to="/CartItem">
           <button className="view-btn">
-            <span>items:{getTotalQuantity() || 0}</span>
+            <span>items: {getTotalQuantity() || 0}</span>
             <span>View Bag</span>
           </button>
         </NavLink>

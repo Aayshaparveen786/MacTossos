@@ -4,6 +4,7 @@
   text-align: center;
   gap: 30px;
   margin-top: 3rem;
+  margin-right: 7rem;
 }
 .heading-box{
   margin-top: 3rem;
@@ -37,7 +38,16 @@ span{
   margin-right: 1rem;
 text-decoration: underline black;
 }
+.cart-container{
+  margin-left: 5rem;
+  margin-top: 3rem;
+}
+.cart-heading{
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 2.7rem;
 
+}
 .meal-container{
   display: flex;
   justify-content: space-around;
