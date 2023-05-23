@@ -59,7 +59,7 @@ const Mealitems = () => {
       <div className="heading-box">
         <h2 className="food-heading">Food Items</h2>
         <NavLink to="/FavoriteItem">
-          <button className="view-btn">Favorite Item</button>
+          <button className="Fvt-btn">Favorite Item</button>
         </NavLink>
         <NavLink to="/AddItems">
           <button className="view-btn">

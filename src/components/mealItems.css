@@ -24,6 +24,14 @@
   align-items: center;
   justify-content: space-between;
 }
+.Fvt-btn{
+  background-color: black;
+  color: white;
+  width: 20vw;
+  border-radius: 20px;
+  height: 9vh;
+  font-size: 17px;
+}
 span{
   margin-left: 1rem;
   margin-right: 1rem;
