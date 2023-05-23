@@ -189,6 +189,7 @@ img{
   width: 80vw;
 }
 .add-btn{
+  margin-right: 1rem;
   margin-top: 1rem;
   color: white;
   background-color: black;
