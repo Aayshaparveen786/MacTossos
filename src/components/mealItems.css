@@ -2,9 +2,12 @@
   display: flex;
   flex-direction: column;
   text-align: center;
+  gap: 30px;
+  margin-top: 3rem;
 }
 .heading-box{
-  margin-top: 5rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   display: flex;
   margin-left: 3rem;
   margin-right: 3rem;
@@ -86,7 +89,7 @@ img {
   font-size: 17px;
   text-decoration: none;
 }
-.search-heading{
+/* .search-heading{
   text-align: center;
   font-size: 50px;
-}
+} */

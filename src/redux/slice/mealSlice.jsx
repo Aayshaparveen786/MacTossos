@@ -10,6 +10,7 @@ export const getMeal = createAsyncThunk("getMeal", async () => {
   );
   // console.log("response", response);
   return response.json();
+
 });
 const mealSlice = createSlice({
   name: "meal",
@@ -54,16 +55,27 @@ const mealSlice = createSlice({
       state.cart = removeItem;
     },
     addFavorite: (state, action) => {
-      console.log("favoriteItem",action);
+      console.log("favoriteItem", action);
       const item = action.payload;
       state.cart.push(item);
     },
-    removeFavorite:(state, action) => {
+    removeFavorite: (state, action) => {
       const removeItem = state.cart.filter(
         (item) => item.cart !== action.payload
       );
       state.cart = removeItem;
-    }
+    },
+    setSearchQuery: (state, action) => {
+      // const item = action.payload;
+      // state.cart.push(item);
+      
+      // const item = action.payload;
+      // state.cart.push(item);
+      // console.log("get",item );
+      state.data = action.payload;
+      console.log("SearchItem", action);
+      return state;
+    },
   },
 
   extraReducers: (builder) => {
@@ -81,8 +93,15 @@ const mealSlice = createSlice({
   },
 });
 export default mealSlice.reducer;
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem,addFavorite,removeFavorite } =
-  mealSlice.actions;
+export const {
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+  addFavorite,
+  removeFavorite,
+  setSearchQuery
+} = mealSlice.actions;
 
 // addItems: (state, action) => {
 //   state.meal?.push(action.payload);
