@@ -164,6 +164,7 @@ img {
     font-size: 25px;
   }
   .view-btn {
+    margin-left: -1rem;
     background-color: black;
     color: white;
     width: 45vw;
