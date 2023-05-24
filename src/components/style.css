@@ -231,7 +231,7 @@ img {
 }
 
 /* IPad */
-/* @media (max-width: px) {
+@media (max-width: 1180px) {
   .Kitchen-heading {
     margin-right: 0;
   }
@@ -267,7 +267,9 @@ img {
   .meal-container {
     display: flex;
     gap: 2rem;
+    flex-direction: column;
   }
+
   .fvt-item {
     text-align: center;
     margin-top: 2rem;
@@ -299,4 +301,4 @@ img {
   height: 5vh;
  }
  
-} */
+}
