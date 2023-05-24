@@ -127,4 +127,15 @@ body {
   width: 280px;
 }
 }
+/* Ipad */
+@media  (max-width :998px){
+  .container{
+    width: 90%;
+  }
+  .search-bar{
+    height:5vh;
+    font-size: 30px;
+  }
+}
+
 
