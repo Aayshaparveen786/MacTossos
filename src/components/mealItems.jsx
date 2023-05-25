@@ -87,6 +87,7 @@ const Mealitems = () => {
                 // }
               >
                 <Favorite sx={{
+                  cursor:"pointer",
                   "&.MuiSvgIcon-root":{
                     fontSize:"2rem"
                   }

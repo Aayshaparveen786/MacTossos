@@ -9,9 +9,9 @@ const FavoriteItem = () => {
 
   return (
     <>
-      <h2 className="fvt-item">FavoriteItem</h2>
+      <h2 className="fvt-item">Favorite Item</h2>
       {mealdetails?.cart?.map((item, index) => (
-        <div key={index} className="food-items">
+        <div key={index} className="fvt-items">
           <ul>
             <li>
               <img src={item.strMealThumb} />

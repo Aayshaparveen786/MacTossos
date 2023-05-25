@@ -14,7 +14,7 @@ const CartItem = ({ quantity = 0 }) => {
       <div className="cart-container">
         <h2 className="cart-heading"> Cart Details</h2>
         {mealdetails?.cart?.map((item, index) => (
-          <div key={index} className="food-items">
+          <div key={index} className="cart-items">
             <ul>
               <li>
                 <img src={item.strMealThumb} />
