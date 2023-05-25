@@ -71,8 +71,10 @@ const SignIn = () => {
         </div>
       </div>
       <div className="signin_container">
-        <p className="signin_heading">Sign In</p>
+        <h1 className="signin_heading">Sign In</h1>
         <form className="form_box">
+          <div className="email-box">
+
           <TextField
             id="standard-basic"
             label="Email address"
@@ -90,6 +92,8 @@ const SignIn = () => {
           {showEmailError == true ? (
             <p className="error-Etext">{EmailErrorMsg}</p>
           ) : null}
+          </div>
+          <div className="password-box">
           <FormControl
             sx={{
               m: 1,
@@ -124,6 +128,7 @@ const SignIn = () => {
           {showPasswordError == true ? (
             <p className="error-Ptext">{PasswordErrorMsg}</p>
           ) : null}
+          </div>
         </form>
         <div className="F-box">
           <Link to="./ForgotPassword" className="F-password">

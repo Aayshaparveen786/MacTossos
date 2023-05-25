@@ -30,7 +30,7 @@ const CartItem = ({ quantity = 0 }) => {
                 -
               </button>
               {/* <p>{quantity}</p> */}
-              <p className="num">{item.quantity}</p>
+              <h4 className="num">{item.quantity}</h4>
 
               <button
                 className="incrDec-btn"

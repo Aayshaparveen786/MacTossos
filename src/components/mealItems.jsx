@@ -58,17 +58,6 @@ const Mealitems = () => {
     <div className="main-container">
       <div className="heading-box">
         <h2 className="food-heading">Food Items</h2>
-        <div className="Links-btn">
-          <NavLink to="/FavoriteItem">
-            <button className="Fvt-btn">Favorite Item</button>
-          </NavLink>
-          <NavLink to="/CartItem">
-            <button className="view-btn">
-              <span>items: {getTotalQuantity() || 0}</span>
-              <span>View Bag</span>
-            </button>
-          </NavLink>
-        </div>
       </div>
       <div className="meal-container">
         {mealdetails?.data?.meals?.map((item, index) => (
@@ -86,12 +75,14 @@ const Mealitems = () => {
                 //   dispatch(addFavorite(item), setFavorite(!isFavorite))
                 // }
               >
-                <Favorite sx={{
-                  cursor:"pointer",
-                  "&.MuiSvgIcon-root":{
-                    fontSize:"2rem"
-                  }
-                }}/>
+                <Favorite
+                  sx={{
+                    cursor: "pointer",
+                    "&.MuiSvgIcon-root": {
+                      fontSize: "1.5rem",
+                    },
+                  }}
+                />
               </div>
               {/* <div
               className={`isFavorite ${item.isFavorite ? "active" : ""}`}
