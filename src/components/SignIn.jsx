@@ -153,12 +153,12 @@ const SignIn = () => {
               </button>
             </Link>
           </div>
-          {/* <p>or</p>
+          <p>or</p>
           <div className="Create-btn-box">
             <Link to="./Create_account">
               <button className="Create-btn">Create an account</button>
             </Link>
-          </div> */}
+          </div>
         </div>
       </div>
     </>
