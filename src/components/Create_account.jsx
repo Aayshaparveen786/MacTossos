@@ -25,7 +25,7 @@ const Create_account = () => {
   const [Firstname, setFirstname] = useState("");
   const [showFnameError, setShowFnameError] = useState(false);
   const [FirstnameErrorMsg, setFirstnameErrorMsg] = useState("");
-  const [Lastname, setLastname] = useState("");
+  const [Lastname , setLastname] = useState("");
   const [showLnameError, setShowLnameError] = useState(false);
   const [LastnameErrorMsg, setLastnameErrorMsg] = useState("");
   // valid states

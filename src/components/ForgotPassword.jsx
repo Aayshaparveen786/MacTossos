@@ -1,5 +1,5 @@
 import { TextField } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 const Forgotpassword = () => {
@@ -46,7 +46,7 @@ const Forgotpassword = () => {
         </div>
         <h2 className="R-heading">Reset your password</h2>
         <p className="Enter-deatils">
-          Enter your email address and we'll send your instructions.
+          Enter your email address and well send your instructions.
         </p>
         <div className="form-box">
           <TextField

@@ -531,6 +531,66 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .img-box {
+    margin-left: 0;
+  }
+  .img-box img {
+    width: 80vw;
+  }
+  .MuiFormControl-root {
+    width: 45ch !important;
+  }
+  .F-box {
+    width: 40vw;
+    font-size: 20px;
+    margin-left: 1.5rem;
+  }
+  .terma_condation_section {
+    width: 85vw;
+    font-size: 15px;
+    margin-left: 6%;
+  }
+  .disable-btn {
+    width: 85vw;
+    font-size: 18px;
+  }
+  .enable-btn {
+    width: 85vw;
+    font-size: 18px;
+  }
+  .Create-btn{
+    width: 85vw;
+    font-size: 18px
+  }
+  .error-Ptext{
+    margin-right: 9rem;
+  }
+  .Forgot_container{
+    margin-left: 6%;
+  }
+  .Back-btn{
+    width: 88vw;
+    font-size: 20px;
+  }
+  .two-box-1{
+    display: block;
+    margin-left: 0;
+  }
+  .Firstname-box{
+    margin-bottom: 1rem;
+  }
+  .two-box-2{
+    margin-left: 0;
+  }
+  .first_case{
+    width: 90vw;
+  }
+  .second_case{
+    width: 90vw;
+  }
+  .last_box{
+    font-size: 20px;
+  }
   .Kitchen-heading {
     display: flex;
     flex-direction: column;
