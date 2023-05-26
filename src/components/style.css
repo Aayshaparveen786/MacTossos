@@ -231,7 +231,7 @@ img {
   flex-direction: column;
   align-items: center;
 }
-.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+/* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   margin-bottom: 20px !important;
   width: 40vw !important;
 }
@@ -246,7 +246,7 @@ img {
 }
 .css-v4u5dn-MuiInputBase-root-MuiInput-root:after {
   border-bottom: 2px solid black !important;
-}
+} */
 .F-box {
   width: 20vw;
   margin-left: 23.5rem;
@@ -558,37 +558,37 @@ a {
     width: 85vw;
     font-size: 18px;
   }
-  .Create-btn{
+  .Create-btn {
     width: 85vw;
-    font-size: 18px
+    font-size: 18px;
   }
-  .error-Ptext{
+  .error-Ptext {
     margin-right: 9rem;
   }
-  .Forgot_container{
+  .Forgot_container {
     margin-left: 6%;
   }
-  .Back-btn{
+  .Back-btn {
     width: 88vw;
     font-size: 20px;
   }
-  .two-box-1{
+  .two-box-1 {
     display: block;
     margin-left: 0;
   }
-  .Firstname-box{
+  .Firstname-box {
     margin-bottom: 1rem;
   }
-  .two-box-2{
+  .two-box-2 {
     margin-left: 0;
   }
-  .first_case{
+  .first_case {
     width: 90vw;
   }
-  .second_case{
+  .second_case {
     width: 90vw;
   }
-  .last_box{
+  .last_box {
     font-size: 20px;
   }
   .Kitchen-heading {

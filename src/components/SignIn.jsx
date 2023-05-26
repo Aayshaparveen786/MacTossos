@@ -23,7 +23,7 @@ const SignIn = () => {
   const [Password, setPassword] = useState("");
   const [EmailErrorMsg, setEmailErrorMsg] = useState("");
   const [PasswordErrorMsg, setPasswordErrorMsg] = useState("");
-  const [showEmailError, setShowEmailError] = useState(false);
+          const [showEmailError, setShowEmailError] = useState(false);
   const [showPasswordError, setShowPasswordError] = useState(false);
 
   const handleEmail = (e) => {
@@ -45,7 +45,7 @@ const SignIn = () => {
   };
 
   const handlePassword = (e) => {
-    console.log("output", e.target.value);
+                  console.log("output", e.target.value);
     if (e.target.name == "Password") {
       setPassword(e.target.value);
       setPasswordErrorMsg("");
@@ -74,60 +74,59 @@ const SignIn = () => {
         <h1 className="signin_heading">Sign In</h1>
         <form className="form_box">
           <div className="email-box">
-
-          <TextField
-            id="standard-basic"
-            label="Email address"
-            name="Email"
-            variant="standard"
-            onChange={handleEmail}
-            sx={{
-              width: "63ch",
-              marginBottom: "2rem",
-              "& .MuiInputLabel-root.Mui-focused": {
-                color: "black",
-              },
-            }}
-          />
-          {showEmailError == true ? (
-            <p className="error-Etext">{EmailErrorMsg}</p>
-          ) : null}
+            <TextField
+              id="standard-basic"
+              label="Email address"
+              name="Email"
+              variant="standard"
+              onChange={handleEmail}
+              sx={{
+                width: "63ch",
+                marginBottom: "2rem",
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
+              }}
+            />
+            {showEmailError == true ? (
+              <p className="error-Etext">{EmailErrorMsg}</p>
+            ) : null}
           </div>
           <div className="password-box">
-          <FormControl
-            sx={{
-              m: 1,
-              width: "63ch",
-              "& .MuiInputLabel-root.Mui-focused": {
-                color: "black",
-              },
-            }}
-            variant="standard"
-          >
-            <InputLabel htmlFor="standard-adornment-password">
-              Password
-            </InputLabel>
-            <Input
-              name="Password"
-              onChange={handlePassword}
-              id="standard-adornment-password"
-              type={showPassword ? "text" : "password"}
-              endAdornment={
-                <InputAdornment position="end">
-                  <IconButton
-                    aria-label="toggle password visibility"
-                    onClick={handleClickShowPassword}
-                    onMouseDown={handleMouseDownPassword}
-                  >
-                    {showPassword ? <VisibilityOff /> : <Visibility />}
-                  </IconButton>
-                </InputAdornment>
-              }
-            />
-          </FormControl>
-          {showPasswordError == true ? (
-            <p className="error-Ptext">{PasswordErrorMsg}</p>
-          ) : null}
+            <FormControl
+              sx={{
+                m: 1,
+                width: "63ch",
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
+              }}
+              variant="standard"
+            >
+              <InputLabel htmlFor="standard-adornment-password">
+                Password
+              </InputLabel>
+              <Input
+                name="Password"
+                onChange={handlePassword}
+                id="standard-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+            {showPasswordError == true ? (
+              <p className="error-Ptext">{PasswordErrorMsg}</p>
+            ) : null}
           </div>
         </form>
         <div className="F-box">
