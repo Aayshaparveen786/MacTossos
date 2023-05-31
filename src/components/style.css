@@ -57,6 +57,10 @@ p {
   cursor: pointer;
 }
 
+.OR-text {
+  text-decoration: none;
+}
+
 .cart-btn {
   cursor: pointer;
   margin-top: -1rem;
@@ -149,12 +153,18 @@ p {
   border-radius: 20px;
   height: 9vh;
   font-size: 17px;
+  margin-right: 5rem;
 }
 
 span {
   margin-left: 1rem;
   margin-right: 1rem;
   text-decoration: underline black;
+}
+
+.Cart {
+  display: flex;
+  justify-content: space-between;
 }
 
 .cart-container {
@@ -165,7 +175,7 @@ span {
 .cart-heading {
   margin-bottom: 2rem;
   text-align: center;
-  font-size: 2.7rem;
+  font-size: 2rem;
 }
 
 .meal-container {
@@ -225,16 +235,17 @@ img {
   background-color: red;
 }
 
-.Search-btn {
-  background-color: white;
-  color: black;
+.Submit-btn {
+  background-color: black;
+  color: white;
   width: 15vw;
   border-radius: 20px;
   cursor: pointer;
   height: 9vh;
   font-size: 17px;
+  margin-top: 2rem;
   text-decoration: none;
-  margin-right: 1rem;
+  margin-left: 14rem;
 }
 
 .Links-btn {
@@ -263,39 +274,27 @@ img {
   align-items: center;
 }
 
-/* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
-  margin-bottom: 20px !important;
-  width: 40vw !important;
+.last-para {
+  /* background-color: aquamarine; */
+  margin-left: 23.2rem;
+  margin-right: 22rem;
 }
-.MuiInputLabel-root:hover {
-  color: black !important;
-}
-.css-v4u5dn-MuiInputBase-root-MuiInput-root:hover:not(
-    .Mui-disabled,
-    .Mui-error
-  ):before {
-  border-bottom: 1px solid gray !important;
-}
-.css-v4u5dn-MuiInputBase-root-MuiInput-root:after {
-  border-bottom: 2px solid black !important;
-} */
+
+
 .F-box {
-  width: 20vw;
-  margin-left: 23.5rem;
+  /* width: 40vw; */
   margin-top: 1rem;
+  margin-bottom: 1rem;
   font-size: 17px;
 }
 
 .terma_condation_section {
-  margin-top: 20px;
-  font-size: 10px;
-  text-align: left;
-  width: 40vw;
-  margin-left: 30%;
+  cursor: pointer;
 }
 
 a {
   text-decoration: underline;
+
 }
 
 .Btn-section {
@@ -595,6 +594,20 @@ a {
 
 .Toastify__close-button--light {
   color: white !important;
+}
+
+
+/* Payment */
+.main-payment-container {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.payment-form {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 /* .search-heading{

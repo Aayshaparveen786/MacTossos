@@ -6,12 +6,15 @@ import { Provider } from "react-redux";
 import store from "./redux/store.jsx";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-let persistor = persistStore(store);
+const persistor = persistStore(store);
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(
+  document.getElementById("root")
+).render(
   <Provider store={store}>
     <PersistGate persistor={persistor}>
       <App />
     </PersistGate>
   </Provider>
 );
+

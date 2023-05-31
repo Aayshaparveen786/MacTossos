@@ -9,6 +9,8 @@ import {
   decrementQuantity,
   removeItem,
 } from "../redux/slice/mealSlice";
+import { NavLink } from "react-router-dom";
+
 const CartItem = ({ quantity = 0 }) => {
   const mealdetails = useSelector(
     (state) => state.mealdetails
@@ -18,9 +20,21 @@ const CartItem = ({ quantity = 0 }) => {
   return (
     <>
       <div className="cart-container">
-        <h2 className="cart-heading">
-          Cart Details
-        </h2>
+        <div className="Cart">
+          <h2 className="cart-heading">
+            Cart Details
+          </h2>
+          <button
+            className="cartItem__removeButton"
+            onClick={() =>
+              dispatch(
+                removeItem(mealdetails.item)
+              )
+            }
+          >
+            Remove
+          </button>
+        </div>
         {mealdetails?.cart?.map((item, index) => (
           <div key={index} className="cart-items">
             <ul>
@@ -29,6 +43,19 @@ const CartItem = ({ quantity = 0 }) => {
               </li>
               <br />
               <li>Name: {item.strMeal}</li>
+              <br />
+              <li>
+                Categroy: {item.strCategory}
+              </li>
+              <br />
+              <li>Area: {item.strArea}</li>
+              <br />
+              <li>
+                Ingredient: {item.strIngredient1},
+                {item.strIngredient2},
+                {item.strIngredient3},
+                {item.strIngredient4}
+              </li>
             </ul>
             <div className="cartItem__incrDec">
               <button
@@ -61,16 +88,11 @@ const CartItem = ({ quantity = 0 }) => {
                 +
               </button>
             </div>
-            <button
-              className="cartItem__removeButton"
-              onClick={() =>
-                dispatch(
-                  removeItem(mealdetails.item)
-                )
-              }
-            >
-              Remove
-            </button>
+            <NavLink to="/Payment">
+              <button className="cartItem__removeButton">
+                Payment
+              </button>
+            </NavLink>
           </div>
         ))}
       </div>

@@ -177,26 +177,32 @@ const SignIn = () => {
               </p>
             ) : null}
           </div>
+          <div className="last-para">
+            <div className="F-box">
+              <Link
+                to="./ForgotPassword"
+                className="F-password"
+              >
+                Forgot password
+              </Link>
+            </div>
+            <div className="terma_condation_section">
+              By signing in, you have read and
+              agree to our
+              <a>
+                MacTossos General Terms and
+                Conditions.
+              </a>
+              For more details on how we use the
+              information we collect about you,
+              please read our <br />
+              <a>
+                MacTossos Privacy and Cookie
+                Policy.
+              </a>
+            </div>
+          </div>
         </form>
-        <div className="F-box">
-          <Link
-            to="./ForgotPassword"
-            className="F-password"
-          >
-            Forgot password
-          </Link>
-        </div>
-        <div className="terma_condation_section">
-          By signing in, you have read and agree
-          to our
-          <a>
-            Vista General Terms and Conditions.
-          </a>{" "}
-          For more details on how we use the
-          information we collect about you, please
-          read our <br />
-          <a>Vista Privacy and Cookie Policy.</a>
-        </div>
         <div className="Btn-section">
           <div className="sign_btn">
             <Link to="./Home">
@@ -213,7 +219,7 @@ const SignIn = () => {
               </button>
             </Link>
           </div>
-          <p>or</p>
+          <span className="OR-text">or</span>
           <div className="Create-btn-box">
             <Link to="./Create_account">
               <button className="Create-btn">

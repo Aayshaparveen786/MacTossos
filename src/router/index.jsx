@@ -11,6 +11,7 @@ import ForgotPassword from "../components/ForgotPassword";
 // eslint-disable-next-line camelcase
 import Create_account from "../components/Create_account";
 import Recipe from "../components/Recipe";
+import Payment from "../components/Payment";
 const MainFram = () => {
   return (
     <>
@@ -50,6 +51,10 @@ const MainFram = () => {
           exact
           path="/:recipeId"
           element={<Recipe />}
+        />
+        <Route
+          path="/Payment"
+          element={<Payment />}
         />
       </Routes>
     </>
