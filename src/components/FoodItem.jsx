@@ -72,21 +72,28 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
+// eslint-disable-next-line react/prop-types
 const FoodItem = ({ data }) => {
   console.log(data);
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   return (
     <>
       {!data
         ? "Not Found"
-        : data.map((item) => {
+        : // eslint-disable-next-line react/prop-types
+          data.map((item) => {
             return (
               <div
                 className="card"
                 key={item.idMeal}
-                //  onClick={()=>navigate(`/${item.idMeal}`)}
+                onClick={() =>
+                  navigate(`/${item.idMeal}`)
+                }
               >
-                <img src={item.strMealThumb} alt="" />
+                <img
+                  src={item.strMealThumb}
+                  alt=""
+                />
                 <h3>{item.strMeal}</h3>
               </div>
             );

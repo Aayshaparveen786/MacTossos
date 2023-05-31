@@ -1,13 +1,7 @@
 .main-container {
   margin-bottom: 5rem;
 }
-.Navbar {
-  display: flex;
-  background-color: black;
-  justify-content: space-between;
-  text-align: center;
-  align-items: center;
-}
+
 .Nav-container {
   background-color: black;
   align-items: center;
@@ -16,7 +10,9 @@
   text-align: center;
 }
 .img-box {
-  margin-left: 32rem;
+  background-color: black;
+  text-align: center;
+  /* margin-left: 32rem; */
 }
 .img-box img {
   width: 18vw;
@@ -365,15 +361,16 @@ a {
   text-decoration: none;
   color: black;
   display: flex;
-  align-items: center;
   gap: 30%;
-  margin-left: 20%;
+  align-items: center;
+  margin-left: 12rem;
 }
 .Back-btn-box {
   margin-bottom: 30px;
+  /* text-align: center; */
 }
 .Back-btn {
-  font-size: 15px;
+  font-size: 17px;
   color: black;
   background-color: white;
   border-color: rgb(233, 223, 223);

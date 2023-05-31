@@ -1,10 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getMeal, addFavorite } from "../redux/slice/mealSlice";
+import React, { useEffect } from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import {
+  addToCart,
+  getMeal,
+  addFavorite,
+} from "../redux/slice/mealSlice";
 import "./style.css";
-import { NavLink } from "react-router-dom";
-import { Favorite, FavoriteBorder, SnippetFolder } from "@mui/icons-material";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { Favorite } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
 const Mealitems = () => {
   //   const dispatch = useDispatch();
   //   const state = useSelector((state) => state);
@@ -23,7 +29,9 @@ const Mealitems = () => {
   //   dispatch (addItems(e));
   // }
 
-  const mealdetails = useSelector((state) => state.mealdetails);
+  const mealdetails = useSelector(
+    (state) => state.mealdetails
+  );
   // console.log("mealdetails",mealdetails);
 
   const dispatch = useDispatch();
@@ -31,14 +39,6 @@ const Mealitems = () => {
     dispatch(getMeal());
     // console.log("State", mealdetails);
   }, []);
-  const getTotalQuantity = () => {
-    let total = 0;
-    mealdetails.cart.forEach((item) => {
-      // console.log("mealdetails",mealdetails);
-      total += item.quantity;
-    });
-    return total;
-  };
   // const [isFavorite, setFavorite] = useState();
   // console.log("favorite", isFavorite);
 
@@ -48,70 +48,99 @@ const Mealitems = () => {
   // };
 
   const toggleFavorite = (item) => {
-    const updatedItem = { ...item, isFavorite: !item.isFavorite };
+    const updatedItem = {
+      ...item,
+      isFavorite: !item.isFavorite,
+    };
     dispatch(addFavorite(updatedItem));
   };
   // const handleToggleFavorite = (item) => {
   //   dispatch(addFavorite(item));
   // };
+  const navigate = useNavigate();
+
   return (
     <div className="main-container">
       <div className="heading-box">
-        <h2 className="food-heading">Food Items</h2>
+        <h2 className="food-heading">
+          Food Items
+        </h2>
       </div>
       <div className="meal-container">
-        {mealdetails?.data?.meals?.map((item, index) => (
-          <div key={index} className="food-items">
-            <ul>
-              <li>
-                <img src={item.strMealThumb} />
-              </li>
-              <div
-                className={`isFavorite ${item.isFavorite ? "active" : ""}`}
-                onClick={() => toggleFavorite(item)}
-                // onClick={() => setFavorite(!isFavorite)}
+        {mealdetails?.data?.meals?.map(
+          (item, index) => (
+            <div
+              key={index}
+              className="food-items"
+            >
+              <ul>
+                <li
+                  onClick={() =>
+                    navigate(`/${item.idMeal}`)
+                  }
+                >
+                  <img src={item.strMealThumb} />
+                </li>
+                <div
+                  className={`isFavorite ${
+                    item.isFavorite
+                      ? "active"
+                      : ""
+                  }`}
+                  onClick={() =>
+                    toggleFavorite(item)
+                  }
+                  // onClick={() => setFavorite(!isFavorite)}
 
-                // onClick={() =>
-                //   dispatch(addFavorite(item), setFavorite(!isFavorite))
-                // }
-              >
-                <Favorite
-                  sx={{
-                    cursor: "pointer",
-                    "&.MuiSvgIcon-root": {
-                      fontSize: "1.5rem",
-                    },
-                  }}
-                />
-              </div>
-              {/* <div
+                  // onClick={() =>
+                  //   dispatch(addFavorite(item), setFavorite(!isFavorite))
+                  // }
+                >
+                  <Favorite
+                    sx={{
+                      cursor: "pointer",
+                      "&.MuiSvgIcon-root": {
+                        fontSize: "1.5rem",
+                      },
+                    }}
+                  />
+                </div>
+                {/* <div
               className={`isFavorite ${item.isFavorite ? "active" : ""}`}
               onClick={() => handleToggleFavorite(item)}
             >
               {item.isFavorite ? <Favorite /> : <FavoriteBorder />}
             </div> */}
-              <br />
-              <li>Name: {item.strMeal}</li>
-              <br />
-              <li>Categroy: {item.strCategory}</li>
-              <br />
-              <li>Area: {item.strArea}</li>
-              <br />
-              Ingredient: {item.strIngredient1}, {item.strIngredient2},<br />
-              {item.strIngredient3}, {item.strIngredient4}
-              {/* <button className="add-btn" onClick={()=> dispatch(addItems(setCount(count + 1)))}> */}
-              {/* <GrAdd className="add-icon"/> */}
-              {/* <button className="add-btn" onClick={() => handleAddToCard(e)}> */}
-              {/* <button onClick={() => dispatch(addToCart({}))}>Add</button> */}
-              <button
-                className="add-btn"
-                onClick={() => dispatch(addToCart(item))}
-              >
-                Add
-              </button>
-            </ul>
-          </div>
-        ))}
+                <br />
+                <li>Name: {item.strMeal}</li>
+                <br />
+                <li>
+                  Categroy: {item.strCategory}
+                </li>
+                <br />
+                <li>Area: {item.strArea}</li>
+                <br />
+                Ingredient: {
+                  item.strIngredient1
+                }, {item.strIngredient2},<br />
+                {item.strIngredient3},{" "}
+                {item.strIngredient4}
+                {/* <button className="add-btn" onClick={()=> dispatch(addItems(setCount(count + 1)))}> */}
+                {/* <GrAdd className="add-icon"/> */}
+                {/* <button className="add-btn" onClick={() => handleAddToCard(e)}> */}
+                {/* <button onClick={() => dispatch(addToCart({}))}>Add</button> */}
+                <button
+                  className="add-btn"
+                  onClick={() =>
+                    dispatch(addToCart(item))
+                  }
+                >
+                  Add
+                </button>
+              </ul>
+            </div>
+          )
+        )}
       </div>
     </div>
   );

@@ -1,11 +1,14 @@
+/* eslint-disable react/react-in-jsx-scope */
 import { TextField } from "@mui/material";
 import { useState } from "react";
-import { BiArrowBack } from "react-icons/bi";
+// import { BiArrowBack } from "react-icons/bi";
 import { Link } from "react-router-dom";
 const Forgotpassword = () => {
   const [Email, setEmail] = useState("");
-  const [EmailErrorMsg, setEmailErrorMsg] = useState("");
-  const [showEmailError, setShowEmailError] = useState(false);
+  const [EmailErrorMsg, setEmailErrorMsg] =
+    useState("");
+  const [showEmailError, setShowEmailError] =
+    useState(false);
   const handelEmail = (e) => {
     console.log("output", e.target.value);
 
@@ -17,11 +20,18 @@ const Forgotpassword = () => {
 
     if (e.target.value == "") {
       setShowEmailError(true);
-      setEmailErrorMsg("Email address is required");
+      setEmailErrorMsg(
+        "Email address is required"
+      );
     }
-    if (Email.length > 0 && !/\S+@\S+\.\S+/.test(Email)) {
+    if (
+      Email.length > 0 &&
+      !/\S+@\S+\.\S+/.test(Email)
+    ) {
       setShowEmailError(true);
-      setEmailErrorMsg("Email address format is invalid.");
+      setEmailErrorMsg(
+        "Email address format is invalid."
+      );
     }
   };
   const handleForgotpassword = (e) => {
@@ -39,14 +49,17 @@ const Forgotpassword = () => {
         <div className="Back-btn-box">
           <button className="Back-btn">
             <Link to="/" className="Link_text">
-              <BiArrowBack className="left_arrow" />
+              {/* <BiArrowBack className="left_arrow" /> */}
               Back to Sign In
             </Link>
           </button>
         </div>
-        <h2 className="R-heading">Reset your password</h2>
+        <h2 className="R-heading">
+          Reset your password
+        </h2>
         <p className="Enter-deatils">
-          Enter your email address and well send your instructions.
+          Enter your email address and well send
+          your instructions.
         </p>
         <div className="form-box">
           <TextField
@@ -58,19 +71,26 @@ const Forgotpassword = () => {
             sx={{
               width: "63ch",
               marginBottom: "2rem",
-              "& .MuiInputLabel-root.Mui-focused": {
-                color: "black",
-              },
+              "& .MuiInputLabel-root.Mui-focused":
+                {
+                  color: "black",
+                },
             }}
           />
           {showEmailError == true ? (
-            <p className="error-Etext">{EmailErrorMsg}</p>
+            <p className="error-Etext">
+              {EmailErrorMsg}
+            </p>
           ) : null}
         </div>
         <div className="Reset_btn">
           <Link to="/SignIn/Reset_Password">
             <button
-              className={Email == "" ? "disable-btn" : "enable-btn"}
+              className={
+                Email == ""
+                  ? "disable-btn"
+                  : "enable-btn"
+              }
               onClick={handleForgotpassword}
               disabled={!Email}
             >
