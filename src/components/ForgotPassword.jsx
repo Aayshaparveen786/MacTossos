@@ -75,6 +75,9 @@ const Forgotpassword = () => {
                 {
                   color: "black",
                 },
+              "& .MuiInputBase-root:after": {
+                borderBottom: "2px solid black",
+              },
             }}
           />
           {showEmailError == true ? (

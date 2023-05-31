@@ -9,17 +9,20 @@
   justify-content: space-between;
   text-align: center;
 }
+
 .img-box {
   background-color: black;
   text-align: center;
   /* margin-left: 32rem; */
 }
+
 .img-box img {
   width: 18vw;
   margin-top: 1rem;
   margin-bottom: 1rem;
   height: 15vh;
 }
+
 .Kitchen-heading img {
   margin-left: 1rem;
   width: 15vw;
@@ -27,20 +30,24 @@
   margin-bottom: 0.5;
   height: 10vh;
 }
+
 .Links-box {
   display: flex;
   gap: 30px;
 }
+
 .Nav-link {
   font-size: 25px;
   color: white;
   text-decoration: none;
 }
+
 .Icons-box {
   margin-right: 2rem;
   display: flex;
   gap: 30px;
 }
+
 .cart {
   display: flex;
 }
@@ -49,6 +56,7 @@ p {
   color: white;
   cursor: pointer;
 }
+
 .cart-btn {
   cursor: pointer;
   margin-top: -1rem;
@@ -62,9 +70,11 @@ p {
   background-color: white;
   text-decoration: none;
 }
+
 .Icons-name {
   color: white;
 }
+
 .heading-box {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -73,6 +83,7 @@ p {
   margin-right: 3rem;
   justify-content: space-between;
 }
+
 .view-btn {
   background-color: black;
   color: white;
@@ -85,15 +96,18 @@ p {
   align-items: center;
   justify-content: space-between;
 }
+
 .fvt-item {
   margin-top: 2rem;
   font-size: 40px;
   text-align: center;
   margin-bottom: 2rem;
 }
+
 .fvt-items {
   text-align: center;
 }
+
 .Fvt-btn {
   background-color: black;
   color: white;
@@ -103,15 +117,19 @@ p {
   height: 9vh;
   font-size: 17px;
 }
+
 .cartItem__incrDec {
   margin-top: 1rem;
   display: flex;
-  flex-direction: column;
-  gap: 5px;
+  flex-direction: row;
+  gap: 20px;
 }
+
+
 .num {
   font-size: 30px;
 }
+
 .incrDec-btn {
   border-radius: 10px;
   background-color: black;
@@ -121,6 +139,7 @@ p {
   cursor: pointer;
   font-size: 30px;
 }
+
 .cartItem__removeButton {
   background-color: black;
   color: white;
@@ -131,32 +150,39 @@ p {
   height: 9vh;
   font-size: 17px;
 }
+
 span {
   margin-left: 1rem;
   margin-right: 1rem;
   text-decoration: underline black;
 }
+
 .cart-container {
   margin-left: 5rem;
   margin-top: 3rem;
 }
+
 .cart-heading {
   margin-bottom: 2rem;
   text-align: center;
   font-size: 2.7rem;
 }
+
 .meal-container {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .heading {
   font-size: 50px;
 }
+
 .sub-heading {
   margin-top: -2rem;
   font-size: 30px;
 }
+
 ul {
   list-style: none;
   display: flex;
@@ -167,6 +193,7 @@ img {
   width: 20vw;
   height: 25vh;
 }
+
 .food-heading {
   font-size: 30px;
 }
@@ -180,19 +207,24 @@ img {
   height: 5vh;
   font-size: 16px;
 }
+
 .add-icon {
   background-color: white;
   margin-right: 2rem;
 }
+
 .active {
   color: blue;
 }
+
 .inactive {
   color: black;
 }
+
 .isFavorite.active {
   background-color: red;
 }
+
 .Search-btn {
   background-color: white;
   color: black;
@@ -204,6 +236,7 @@ img {
   text-decoration: none;
   margin-right: 1rem;
 }
+
 .Links-btn {
   display: flex;
   cursor: pointer;
@@ -216,17 +249,20 @@ img {
   margin-top: 5rem;
   /* text-align: center; */
 }
+
 .signin_heading {
   text-align: center;
   font-size: 35px;
   margin-bottom: 20px;
   color: black;
 }
+
 .form_box {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 /* .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   margin-bottom: 20px !important;
   width: 40vw !important;
@@ -249,6 +285,7 @@ img {
   margin-top: 1rem;
   font-size: 17px;
 }
+
 .terma_condation_section {
   margin-top: 20px;
   font-size: 10px;
@@ -256,18 +293,22 @@ img {
   width: 40vw;
   margin-left: 30%;
 }
+
 a {
   text-decoration: underline;
 }
+
 .Btn-section {
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 20px;
 }
+
 .sign_btn {
   margin-top: 25px;
 }
+
 .enable-btn {
   color: white;
   font-size: 15px;
@@ -280,6 +321,7 @@ a {
   border-width: 1px;
   background-color: black;
 }
+
 .disable-btn {
   color: gray;
   font-size: 15px;
@@ -293,10 +335,12 @@ a {
   background-color: rgb(248, 248, 248);
   border-color: rgb(233, 223, 223);
 }
+
 .email-box {
   display: flex;
   flex-direction: column;
 }
+
 .error-Etext {
   color: red;
   font-size: 15px;
@@ -304,15 +348,18 @@ a {
   margin-bottom: 1rem;
   /* margin-right: 19rem; */
 }
+
 .error-Ptext {
   color: red;
   font-size: 15px;
   margin-right: 17rem;
   margin-top: 0.2rem;
 }
+
 .Create-btn:hover {
   border-color: black;
 }
+
 .Create-btn {
   font-size: 15px;
   color: black;
@@ -327,12 +374,15 @@ a {
   width: 40vw;
   height: 8vh;
 }
+
 .F-password {
   color: black;
 }
+
 .F-password:hover {
   color: black;
 }
+
 .terma_condation_section {
   font-size: 11px;
 }
@@ -343,20 +393,25 @@ a {
   margin-top: 5rem;
   margin-left: 30%;
 }
+
 .R-heading {
   margin-bottom: 20px;
   font-weight: 200;
 }
+
 .Enter-deatils {
   margin-bottom: 20px;
   font-weight: 100;
 }
+
 .Reset_btn {
   margin-top: 30px;
 }
+
 .left_arrow {
   font-size: 22px;
 }
+
 .Link_text {
   text-decoration: none;
   color: black;
@@ -365,10 +420,12 @@ a {
   align-items: center;
   margin-left: 12rem;
 }
+
 .Back-btn-box {
   margin-bottom: 30px;
   /* text-align: center; */
 }
+
 .Back-btn {
   font-size: 17px;
   color: black;
@@ -382,6 +439,7 @@ a {
   width: 40vw;
   height: 8vh;
 }
+
 .Back-btn-box :hover {
   border-color: black;
 }
@@ -392,10 +450,12 @@ a {
   margin-top: 5rem;
   text-align: center;
 }
+
 .create_heading {
   font-size: 30px;
   margin-bottom: 2rem;
 }
+
 .Create_form {
   margin-left: 20px;
   margin-right: 20px;
@@ -403,6 +463,7 @@ a {
   flex-direction: column;
   gap: 20px;
 }
+
 .two-box-1 {
   display: flex;
   gap: 20px;
@@ -414,27 +475,33 @@ a {
   margin-left: 30%;
   margin-right: 30%;
 }
+
 .sign_link {
   color: black;
 }
+
 .error {
   display: flex;
 }
+
 .error-nametext-account {
   color: red;
   font-size: 11px;
   margin-right: 49%;
 }
+
 .error-Etext-account {
   color: red;
   font-size: 12px;
   margin-top: -20px;
   margin-right: 22vw;
 }
+
 .last_box {
   margin-top: 15px;
   font-size: 15px;
 }
+
 /* The message box is shown when the user clicks on the password field */
 .message {
   display: flex;
@@ -452,6 +519,7 @@ a {
   display: flex;
   gap: 25%;
 }
+
 .second_case {
   display: flex;
   font-size: 15px;
@@ -481,19 +549,23 @@ a {
   left: -10px;
   content: "✖";
 }
+
 .Create_btn {
   margin-top: 20px;
   margin-left: 5%;
 }
+
 /* Reset Password */
 .reset_continer {
   height: 100vh;
   margin-top: 180px;
 }
+
 .reset-heading {
   margin-bottom: 25px;
   margin-left: 0px;
 }
+
 .reset_form {
   display: flex;
   text-align: center;
@@ -501,22 +573,26 @@ a {
   /* gap: 30px; */
   padding: 0px;
 }
+
 .error-Ntext {
   color: red;
   font-size: 12px;
   margin-top: -20px;
   margin-right: 28vw;
 }
+
 .error-Ctext {
   color: red;
   font-size: 12px;
   margin-top: -20px;
   margin-right: 26vw;
 }
+
 /* toast */
 .Toastify__progress-bar-theme--light {
   background: white !important;
 }
+
 .Toastify__close-button--light {
   color: white !important;
 }
@@ -531,63 +607,80 @@ a {
   .img-box {
     margin-left: 0;
   }
+
   .img-box img {
     width: 80vw;
   }
+
   .MuiFormControl-root {
     width: 45ch !important;
   }
+
   .F-box {
     width: 40vw;
     font-size: 20px;
     margin-left: 1.5rem;
   }
+
   .terma_condation_section {
     width: 85vw;
     font-size: 15px;
     margin-left: 6%;
   }
+
   .disable-btn {
     width: 85vw;
     font-size: 18px;
   }
+
   .enable-btn {
     width: 85vw;
     font-size: 18px;
   }
+
   .Create-btn {
     width: 85vw;
     font-size: 18px;
   }
+
   .error-Ptext {
     margin-right: 9rem;
   }
+
   .Forgot_container {
     margin-left: 6%;
   }
+
   .Back-btn {
     width: 88vw;
     font-size: 20px;
   }
+
   .two-box-1 {
     display: block;
     margin-left: 0;
   }
+
   .Firstname-box {
     margin-bottom: 1rem;
   }
+
   .two-box-2 {
     margin-left: 0;
   }
+
   .first_case {
     width: 90vw;
   }
+
   .second_case {
     width: 90vw;
   }
+
   .last_box {
     font-size: 20px;
   }
+
   .Kitchen-heading {
     display: flex;
     flex-direction: column;
@@ -595,6 +688,7 @@ a {
     margin-top: 2rem;
     margin-right: 0rem;
   }
+
   .Search-btn {
     background-color: black;
     color: white;
@@ -604,6 +698,7 @@ a {
     font-size: 25px;
     text-decoration: none;
   }
+
   .heading-box {
     margin-top: 3rem;
     margin-bottom: 3rem;
@@ -614,15 +709,18 @@ a {
     /* margin-right: 3rem; */
     /* justify-content: space-between; */
   }
+
   .food-heading {
     text-align: center;
     font-size: 35px;
   }
+
   .Links-btn {
     display: flex;
     gap: 20px;
     /* justify-content: space-between; */
   }
+
   .Fvt-btn {
     background-color: black;
     color: white;
@@ -631,6 +729,7 @@ a {
     height: 9vh;
     font-size: 25px;
   }
+
   .view-btn {
     margin-left: -1rem;
     background-color: black;
@@ -643,18 +742,22 @@ a {
     align-items: center;
     justify-content: space-between;
   }
+
   .meal-container {
     display: flex;
     flex-direction: column;
   }
+
   ul {
     margin-left: 1rem;
     font-size: 25px;
   }
+
   img {
     margin-left: 2rem;
     width: 80vw;
   }
+
   .add-btn {
     margin-right: 1rem;
     margin-top: 1rem;
@@ -664,26 +767,32 @@ a {
     font-size: 25px;
     margin-bottom: 5rem;
   }
+
   .isFavorite {
     margin-left: 1rem;
     margin-top: 1rem;
   }
+
   .num {
     color: black;
     text-decoration: none;
     font-size: 5rem;
   }
+
   .incrDec-btn {
     font-size: 3rem;
     height: 6vh;
     width: 15vw;
   }
+
   .cart-container {
     margin-left: 0rem;
   }
+
   .cartItem__incrDec {
     margin-left: 1rem;
   }
+
   .cartItem__removeButton {
     margin-left: 1rem;
     margin-top: 2rem;
@@ -692,6 +801,7 @@ a {
     width: 35vw;
     margin-bottom: 5rem;
   }
+
   .fvt-item {
     margin-top: 2rem;
     text-align: center;
