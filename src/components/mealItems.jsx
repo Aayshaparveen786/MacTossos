@@ -1,4 +1,8 @@
-import React, { useEffect } from "react";
+/* eslint-disable no-unused-vars */
+import React, {
+  useEffect,
+  useState,
+} from "react";
 import {
   useDispatch,
   useSelector,
@@ -11,35 +15,31 @@ import {
 import "./style.css";
 import { Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
+// import { Skeleton, Stack } from "@mui/material";
 const Mealitems = () => {
-  //   const dispatch = useDispatch();
-  //   const state = useSelector((state) => state);
-  //   console.log("State", state);
-
-  //   if (state.card.isLoading) {
-  //     return <h1>Loading....</h1>;
-  //   }
-  // const { card, isLoading } = useSelector((state) => state.card);
-  // const { card, isLoading } = useSelector((state) => state.card);
-  // console.log("State", mealdetails);
-
-  // Function to increment count by 1
-  // const [count, setCount] = useState(0);
-  // const handleAddToCard =(e)=>{
-  //   dispatch (addItems(e));
-  // }
-
+  // const { mealdetails, isLoading } = useSelector(
+  //   (state) => state.mealdetails
+  // );
+  // console.log("state", mealdetails);
   const mealdetails = useSelector(
     (state) => state.mealdetails
   );
-  // console.log("mealdetails",mealdetails);
+  console.log("data", mealdetails);
+
+  const isLoading = useSelector(
+    (state) => state.mealdetails.isLoading
+  );
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+  // const [isLoading, setisLoading] = useState();
   useEffect(() => {
     dispatch(getMeal());
     // console.log("State", mealdetails);
   }, []);
+
   // const [isFavorite, setFavorite] = useState();
+
   // console.log("favorite", isFavorite);
 
   // const toggleFavorite = (item) => {
@@ -54,10 +54,15 @@ const Mealitems = () => {
     };
     dispatch(addFavorite(updatedItem));
   };
+  if (isLoading) {
+    console.log("isLoading", isLoading);
+    // console.log("mealdetails", mealdetails);
+    return <h1>Loading....</h1>;
+  }
+
   // const handleToggleFavorite = (item) => {
   //   dispatch(addFavorite(item));
   // };
-  const navigate = useNavigate();
 
   return (
     <div className="main-container">
@@ -66,6 +71,7 @@ const Mealitems = () => {
           Food Items
         </h2>
       </div>
+
       <div className="meal-container">
         {mealdetails?.data?.meals?.map(
           (item, index) => (
@@ -74,13 +80,20 @@ const Mealitems = () => {
               className="food-items"
             >
               <ul>
+                {/* <Stack spacing={1}> */}
                 <li
                   onClick={() =>
                     navigate(`/${item.idMeal}`)
                   }
                 >
+                  {/* <Skeleton
+                      variant="rectangular"
+                      width={210}
+                      height={60}
+                    /> */}
                   <img src={item.strMealThumb} />
                 </li>
+                {/* </Stack> */}
                 <div
                   className={`isFavorite ${
                     item.isFavorite

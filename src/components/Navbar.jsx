@@ -5,6 +5,9 @@ import { useSelector } from "react-redux";
 import { Favorite } from "@mui/icons-material";
 import { CgSearch } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+
 const Navbar = () => {
   const mealdetails = useSelector(
     (state) => state.mealdetails
@@ -18,6 +21,47 @@ const Navbar = () => {
     });
     return total;
   };
+  const [state, setState] = React.useState({
+    open: false,
+    vertical: "top",
+    horizontal: "center",
+  });
+  const { vertical, horizontal, open } = state;
+
+  const handleClick = (newState) => () => {
+    setState({ open: true, ...newState });
+  };
+
+  // const handleClose = () => {
+  //   setState({ ...state, open: false });
+  // };
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+  const buttons = (
+    <React.Fragment>
+      {/* <Button
+        onClick={handleClick({
+          vertical: "top",
+          horizontal: "right",
+        })}
+      >
+        Logout
+      </Button> */}
+      <FiLogOut
+        color="white"
+        size="1.5rem"
+        onClick={handleClick({
+          vertical: "top",
+          horizontal: "right",
+        })}
+      />
+    </React.Fragment>
+  );
+
   return (
     <>
       <div className="Nav-container">
@@ -86,12 +130,38 @@ const Navbar = () => {
             <p>Cart</p>
           </div>
           <div className="Search">
-            <NavLink to="/">
-              <FiLogOut
+            {buttons}
+            <Snackbar
+              anchorOrigin={{
+                vertical,
+                horizontal,
+              }}
+              sx={{
+                marginTop: "3.5rem",
+              }}
+              open={open}
+              // onClose={handleClose}
+              message="Are You Sure"
+              key={vertical + horizontal}
+              action={
+                <NavLink to="/">
+                  <React.Fragment>
+                    <Button
+                      sx={{ color: "white" }}
+                      // color="primary"
+                      size="small"
+                      onClick={handleClose}
+                    >
+                      Ok
+                    </Button>
+                  </React.Fragment>
+                </NavLink>
+              }
+            />
+            {/* <FiLogOut
                 color="white"
                 size="1.5rem"
-              />
-            </NavLink>
+              /> */}
             <p>LogOut</p>
           </div>
         </div>

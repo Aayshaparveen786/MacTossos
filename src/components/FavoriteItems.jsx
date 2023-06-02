@@ -1,9 +1,13 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { removeFavorite} from "../redux/slice/mealSlice";
-
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
+import { removeFavorite } from "../redux/slice/mealSlice";
 const FavoriteItem = () => {
-  const mealdetails = useSelector((state) => state.mealdetails);
+  const mealdetails = useSelector(
+    (state) => state.mealdetails
+  );
   console.log("FavoriteItem", mealdetails?.cart);
   const dispatch = useDispatch();
 
@@ -23,12 +27,21 @@ const FavoriteItem = () => {
             <br />
             <li>Area: {item.strArea}</li>
             <br />
-            Ingredient: {item.strIngredient1}, {item.strIngredient2},<br />
-            {item.strIngredient3}, {item.strIngredient4}
+            Ingredient: {
+              item.strIngredient1
+            }, {item.strIngredient2},<br />
+            {item.strIngredient3},{" "}
+            {item.strIngredient4}
           </ul>
           <button
             className="cartItem__removeButton"
-            onClick={() => dispatch(removeFavorite(mealdetails.cart.item))}
+            onClick={() =>
+              dispatch(
+                removeFavorite(
+                  mealdetails.cart.item
+                )
+              )
+            }
           >
             Remove
           </button>
