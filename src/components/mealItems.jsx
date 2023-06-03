@@ -1,34 +1,21 @@
 /* eslint-disable no-unused-vars */
-import React, {
-  useEffect,
-  useState,
-} from "react";
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
-import {
-  addToCart,
-  getMeal,
-  addFavorite,
-} from "../redux/slice/mealSlice";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, getMeal, addFavorite } from "../redux/slice/mealSlice";
 import "./style.css";
 import { Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 // import { Skeleton, Stack } from "@mui/material";
+import MealSkeleton from "./mealSkeleton";
 const Mealitems = () => {
   // const { mealdetails, isLoading } = useSelector(
   //   (state) => state.mealdetails
   // );
   // console.log("state", mealdetails);
-  const mealdetails = useSelector(
-    (state) => state.mealdetails
-  );
+  const mealdetails = useSelector((state) => state.mealdetails);
   console.log("data", mealdetails);
 
-  const isLoading = useSelector(
-    (state) => state.mealdetails.isLoading
-  );
+  const isLoading = useSelector((state) => state.mealdetails.isLoading);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -57,7 +44,17 @@ const Mealitems = () => {
   if (isLoading) {
     console.log("isLoading", isLoading);
     // console.log("mealdetails", mealdetails);
-    return <h1>Loading....</h1>;
+    return (
+      <>
+        <h1>Loading....</h1>;
+        <div className="meal-container">
+          <MealSkeleton />
+          <MealSkeleton />
+          <MealSkeleton />
+          <MealSkeleton />
+        </div>
+      </>
+    );
   }
 
   // const handleToggleFavorite = (item) => {
@@ -67,93 +64,62 @@ const Mealitems = () => {
   return (
     <div className="main-container">
       <div className="heading-box">
-        <h2 className="food-heading">
-          Food Items
-        </h2>
+        <h2 className="food-heading">Food Items</h2>
       </div>
 
       <div className="meal-container">
-        {mealdetails?.data?.meals?.map(
-          (item, index) => (
-            <div
-              key={index}
-              className="food-items"
-            >
-              <ul>
-                {/* <Stack spacing={1}> */}
-                <li
-                  onClick={() =>
-                    navigate(`/${item.idMeal}`)
-                  }
-                >
-                  {/* <Skeleton
-                      variant="rectangular"
-                      width={210}
-                      height={60}
-                    /> */}
-                  <img src={item.strMealThumb} />
-                </li>
-                {/* </Stack> */}
-                <div
-                  className={`isFavorite ${
-                    item.isFavorite
-                      ? "active"
-                      : ""
-                  }`}
-                  onClick={() =>
-                    toggleFavorite(item)
-                  }
-                  // onClick={() => setFavorite(!isFavorite)}
+        {mealdetails?.data?.meals?.map((item, index) => (
+          <div key={index} className="food-items">
+            <ul>
+              <li onClick={() => navigate(`/${item.idMeal}`)}>
+                <img src={item.strMealThumb} />
+              </li>
+              <div
+                className={`isFavorite ${item.isFavorite ? "active" : ""}`}
+                onClick={() => toggleFavorite(item)}
+                // onClick={() => setFavorite(!isFavorite)}
 
-                  // onClick={() =>
-                  //   dispatch(addFavorite(item), setFavorite(!isFavorite))
-                  // }
-                >
-                  <Favorite
-                    sx={{
-                      cursor: "pointer",
-                      "&.MuiSvgIcon-root": {
-                        fontSize: "1.5rem",
-                      },
-                    }}
-                  />
-                </div>
-                {/* <div
+                // onClick={() =>
+                //   dispatch(addFavorite(item), setFavorite(!isFavorite))
+                // }
+              >
+                <Favorite
+                  sx={{
+                    cursor: "pointer",
+                    "&.MuiSvgIcon-root": {
+                      fontSize: "1.5rem",
+                    },
+                  }}
+                />
+              </div>
+              {/* <div
               className={`isFavorite ${item.isFavorite ? "active" : ""}`}
               onClick={() => handleToggleFavorite(item)}
             >
               {item.isFavorite ? <Favorite /> : <FavoriteBorder />}
             </div> */}
-                <br />
-                <li>Name: {item.strMeal}</li>
-                <br />
-                <li>
-                  Categroy: {item.strCategory}
-                </li>
-                <br />
-                <li>Area: {item.strArea}</li>
-                <br />
-                Ingredient: {
-                  item.strIngredient1
-                }, {item.strIngredient2},<br />
-                {item.strIngredient3},{" "}
-                {item.strIngredient4}
-                {/* <button className="add-btn" onClick={()=> dispatch(addItems(setCount(count + 1)))}> */}
-                {/* <GrAdd className="add-icon"/> */}
-                {/* <button className="add-btn" onClick={() => handleAddToCard(e)}> */}
-                {/* <button onClick={() => dispatch(addToCart({}))}>Add</button> */}
-                <button
-                  className="add-btn"
-                  onClick={() =>
-                    dispatch(addToCart(item))
-                  }
-                >
-                  Add
-                </button>
-              </ul>
-            </div>
-          )
-        )}
+              <br />
+              <li>Name: {item.strMeal}</li>
+              <br />
+              <li>Categroy: {item.strCategory}</li>
+              <br />
+              <li>Area: {item.strArea}</li>
+              <br />
+              Ingredient: {item.strIngredient1}, {item.strIngredient2},<br />
+              {item.strIngredient3}, {item.strIngredient4}
+              {/* <button className="add-btn" onClick={()=> dispatch(addItems(setCount(count + 1)))}> */}
+              {/* <GrAdd className="add-icon"/> */}
+              {/* <button className="add-btn" onClick={() => handleAddToCard(e)}> */}
+              {/* <button onClick={() => dispatch(addToCart({}))}>Add</button> */}
+              <button
+                className="add-btn"
+                onClick={() => dispatch(addToCart(item))}
+              >
+                Add
+              </button>
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
