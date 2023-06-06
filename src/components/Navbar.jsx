@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { useSelector } from "react-redux";
@@ -7,11 +7,10 @@ import { CgSearch } from "react-icons/cg";
 import { FiLogOut } from "react-icons/fi";
 import Button from "@mui/material/Button";
 import Snackbar from "@mui/material/Snackbar";
-
+import { AiOutlineClose } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
 const Navbar = () => {
-  const mealdetails = useSelector(
-    (state) => state.mealdetails
-  );
+  const mealdetails = useSelector((state) => state.mealdetails);
 
   const getTotalQuantity = () => {
     let total = 0;
@@ -43,14 +42,6 @@ const Navbar = () => {
   };
   const buttons = (
     <React.Fragment>
-      {/* <Button
-        onClick={handleClick({
-          vertical: "top",
-          horizontal: "right",
-        })}
-      >
-        Logout
-      </Button> */}
       <FiLogOut
         color="white"
         size="1.5rem"
@@ -61,42 +52,54 @@ const Navbar = () => {
       />
     </React.Fragment>
   );
+  const [openMenu, setOpenMenu] = useState(false);
 
   return (
     <>
       <div className="Nav-container">
         <div className="Kitchen-heading">
-          <NavLink to="/">
+          <a href="#" onClick={() => setOpenMenu(false)}>
             <img src="./images/Mactassos-logo_white.png" />
-          </NavLink>
+          </a>
         </div>
-        <div className="Links-box">
-          <NavLink
-            to="/Home"
-            className="Nav-link"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/About"
-            className="Nav-link"
-          >
-            About
-          </NavLink>
-          <NavLink
-            to="/Contact"
-            className="Nav-link"
-          >
-            Contact
-          </NavLink>
+        <div className={openMenu ? "menuIcon active" : "menuIcon"}>
+          <div className="Links-box">
+            <NavLink
+              to="/Home"
+              // className="Nav-link"
+              className={({ isActive }) =>
+                isActive ? "navbar-link bottom-dash" : "navbar-link"
+              }
+              onClick={() => setOpenMenu(false)}
+            >
+              Home
+            </NavLink>
+            <NavLink
+              to="/About"
+              // className="Nav-link"
+              className={({ isActive }) =>
+                isActive ? "navbar-link bottom-dash" : "navbar-link"
+              }
+              onClick={() => setOpenMenu(false)}
+            >
+              About
+            </NavLink>
+            <NavLink
+              to="/Contact"
+              // className="Nav-link"
+              className={({ isActive }) =>
+                isActive ? "navbar-link bottom-dash" : "navbar-link"
+              }
+              onClick={() => setOpenMenu(false)}
+            >
+              Contact
+            </NavLink>
+          </div>
         </div>
         <div className="Icons-box">
           <div className="search-box">
             <NavLink to="/Search">
-              <CgSearch
-                color="white"
-                size="1.5rem"
-              />
+              <CgSearch color="white" size="1.5rem" />
             </NavLink>
             <p className="icons-name">Search</p>
           </div>
@@ -116,15 +119,10 @@ const Navbar = () => {
           </div>
           <div>
             <div className="cart">
-              <AiOutlineShoppingCart
-                color="white"
-                size="2rem"
-              />
+              <AiOutlineShoppingCart color="white" size="2rem" />
 
               <NavLink to="/CartItem">
-                <button className="cart-btn">
-                  {getTotalQuantity() || 0}
-                </button>
+                <button className="cart-btn">{getTotalQuantity() || 0}</button>
               </NavLink>
             </div>
             <p>Cart</p>
@@ -158,11 +156,18 @@ const Navbar = () => {
                 </NavLink>
               }
             />
-            {/* <FiLogOut
-                color="white"
-                size="1.5rem"
-              /> */}
+
             <p>LogOut</p>
+          </div>
+          <div className="mobile-navbar-btn">
+            <div onClick={() => setOpenMenu(true)}>
+              <GiHamburgerMenu className="mobile-nav-icon" />
+            </div>
+            <AiOutlineClose
+              name="close-outline"
+              className="close-outline mobile-nav-icon"
+              onClick={() => setOpenMenu(false)}
+            />
           </div>
         </div>
       </div>

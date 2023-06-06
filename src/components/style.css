@@ -10,6 +10,45 @@
   text-align: center;
 }
 
+.navbar-link {
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+}
+
+.active .mobile-nav-icon {
+  display: none;
+  font-size: 2.2rem;
+  position: absolute;
+  top: 30%;
+  right: 36%;
+  color: #000000;
+  z-index: 9999;
+}
+
+.active .close-outline {
+  display: inline-block;
+}
+
+.active .navbar-list {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 999;
+}
+
+.mobile-navbar-btn {
+  display: none;
+}
+
+.close-outline {
+  display: none;
+}
+
+.mobile-navbar-btn[name="close-outline"] {
+  display: none;
+}
+
 .img-box {
   background-color: black;
   text-align: center;
@@ -128,7 +167,6 @@ p {
   flex-direction: row;
   gap: 20px;
 }
-
 
 .num {
   font-size: 30px;
@@ -280,7 +318,6 @@ img {
   margin-right: 22rem;
 }
 
-
 .F-box {
   /* width: 40vw; */
   margin-top: 1rem;
@@ -294,7 +331,6 @@ img {
 
 a {
   text-decoration: underline;
-
 }
 
 .Btn-section {
@@ -596,7 +632,6 @@ a {
   color: white !important;
 }
 
-
 /* Payment */
 .main-payment-container {
   text-align: center;
@@ -617,6 +652,79 @@ a {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .Nav-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Links-box {
+    gap: 3.5rem;
+  }
+
+  .mobile-navbar-btn {
+    display: inline-block;
+    z-index: 999;
+    border: black;
+    cursor: pointer;
+  }
+
+  .mobile-nav-icon {
+    font-size: 2rem;
+    margin: 0px 35px;
+    color: white;
+  }
+
+  .Links-box {
+    /* width: 100vw; */
+    /* height: 100vh; */
+    /* position: absolute; */
+    /* top: -19%;
+    left: 0; */
+    /* background-color: white; */
+    display: flex;
+    /* padding-top: 15vh; */
+    margin-right: 8rem;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+    transform: translateX(100%);
+    /* visibility: hidden; */
+    /* opacity: 0; */
+  }
+
+  .navbar-link:visited {
+    font-size: 2rem;
+    color: white;
+  }
+
+  navbar-link:hover,
+  navbar-link:active {
+    color: black;
+  }
+
+  .active .mobile-nav-icon {
+    display: none;
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    z-index: 9999;
+  }
+
+  .active .close-outline {
+    display: inline-block;
+  }
+
+  .active .navbar-list {
+    visibility: visible;
+    opacity: 1;
+    /* transform: translateX(-38px); */
+    z-index: 999;
+  }
+
+  .navbar-link {
+    font-size: larger;
+  }
+
   .img-box {
     margin-left: 0;
   }

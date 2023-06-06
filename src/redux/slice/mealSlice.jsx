@@ -1,22 +1,16 @@
-import {
-  createAsyncThunk,
-  createSlice,
-} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getMeal = createAsyncThunk(
-  "getMeal",
-  async () => {
-    const response = await fetch(
-      // `https://www.themealdb.com/api/json/v1/1/search.php?s`
-      "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
-      // "https://www.themealdb.com/api/json/v1/1/search.php?s=Apple&Blackberry"
-      // "https://www.themealdb.com/api/json/v1/1/search.php?s="
-      // "https://api.edamam.com/doc/open-api/recipe-book-v1.json"
-    );
-    // console.log("response", response);
-    return response.json();
-  }
-);
+export const getMeal = createAsyncThunk("getMeal", async () => {
+  const response = await fetch(
+    // `https://www.themealdb.com/api/json/v1/1/search.php?s`
+    "https://www.themealdb.com/api/json/v1/1/search.php?f=a"
+    // "https://www.themealdb.com/api/json/v1/1/search.php?s=Apple&Blackberry"
+    // "https://www.themealdb.com/api/json/v1/1/search.php?s="
+    // "https://api.edamam.com/doc/open-api/recipe-book-v1.json"
+  );
+  // console.log("response", response);
+  return response.json();
+});
 const mealSlice = createSlice({
   name: "meal",
   initialState: {
@@ -30,10 +24,9 @@ const mealSlice = createSlice({
       // state.meal.push({ ...action.payload, quantity: 1 });
       // console.log("state", state);
       console.log("action", action);
-      const itemsInCart = state.cart.find(
-        (item) => item === action.payload
-      );
+      const itemsInCart = state.cart.find((item) => item === action.payload);
       if (itemsInCart) {
+        // console.log("itemInCart", itemsInCart);
         itemsInCart.quantity++;
       } else {
         state.cart.push({
@@ -44,18 +37,14 @@ const mealSlice = createSlice({
     },
 
     incrementQuantity: (state, action) => {
-      const item = state.cart.find(
-        (item) => item.id == action.payload
-      );
-      console.log("increment", action.payload);
+      const item = state.cart.find((item) => item.id == action.payload);
+      // console.log("increment", action.payload);
       item.quantity++;
       // action.payload.quantity++;
       console.log("increment", item.quantity);
     },
     decrementQuantity: (state, action) => {
-      const item = state.cart.find(
-        (item) => item.id === action.payload
-      );
+      const item = state.cart.find((item) => item.id === action.payload);
       if (item.quantity === 1) {
         item.quantity = 1;
       } else {
@@ -82,26 +71,17 @@ const mealSlice = createSlice({
   },
 
   extraReducers: (builder) => {
-    builder.addCase(
-      getMeal.pending,
-      (state, action) => {
-        state.isLoading = true;
-      }
-    );
-    builder.addCase(
-      getMeal.fulfilled,
-      (state, action) => {
-        state.isLoading = false;
-        state.data = action.payload;
-      }
-    );
-    builder.addCase(
-      getMeal.rejected,
-      (state, action) => {
-        console.log("Error", action.payload);
-        state.isError = true;
-      }
-    );
+    builder.addCase(getMeal.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(getMeal.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.data = action.payload;
+    });
+    builder.addCase(getMeal.rejected, (state, action) => {
+      console.log("Error", action.payload);
+      state.isError = true;
+    });
   },
 });
 export default mealSlice.reducer;

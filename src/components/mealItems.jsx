@@ -1,17 +1,24 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, getMeal, addFavorite } from "../redux/slice/mealSlice";
+import {
+  addToCart,
+  getMeal,
+  addFavorite,
+  decrementQuantity,
+  incrementQuantity,
+} from "../redux/slice/mealSlice";
 import "./style.css";
 import { Favorite } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 // import { Skeleton, Stack } from "@mui/material";
 import MealSkeleton from "./mealSkeleton";
-const Mealitems = () => {
-  // const { mealdetails, isLoading } = useSelector(
+const Mealitems = ({ quantity = 0 }) => {
+  console.log("quantity", quantity);
   //   (state) => state.mealdetails
+  // const { mealdetails, isLoading } = useSelector(
   // );
-  // console.log("state", mealdetails);
   const mealdetails = useSelector((state) => state.mealdetails);
   console.log("data", mealdetails);
 
@@ -46,7 +53,7 @@ const Mealitems = () => {
     // console.log("mealdetails", mealdetails);
     return (
       <>
-        <h1>Loading....</h1>;
+        {/* <h1>Loading....</h1>; */}
         <div className="meal-container">
           <MealSkeleton />
           <MealSkeleton />
@@ -56,7 +63,15 @@ const Mealitems = () => {
       </>
     );
   }
-
+  const getTotalQuantity = () => {
+    let total = 0;
+    // mealdetails.cart.forEach((item) => {
+    mealdetails.data.meals.forEach((item) => {
+      // console.log("mealdetails",mealdetails);
+      total += item.quantity;
+    });
+    return total;
+  };
   // const handleToggleFavorite = (item) => {
   //   dispatch(addFavorite(item));
   // };
@@ -105,18 +120,40 @@ const Mealitems = () => {
               <br />
               <li>Area: {item.strArea}</li>
               <br />
-              Ingredient: {item.strIngredient1}, {item.strIngredient2},<br />
-              {item.strIngredient3}, {item.strIngredient4}
-              {/* <button className="add-btn" onClick={()=> dispatch(addItems(setCount(count + 1)))}> */}
-              {/* <GrAdd className="add-icon"/> */}
-              {/* <button className="add-btn" onClick={() => handleAddToCard(e)}> */}
-              {/* <button onClick={() => dispatch(addToCart({}))}>Add</button> */}
-              <button
-                className="add-btn"
-                onClick={() => dispatch(addToCart(item))}
-              >
-                Add
-              </button>
+              <li>
+                Ingredient: {item.strIngredient1}, {item.strIngredient2},<br />
+                {item.strIngredient3}, {item.strIngredient4}
+              </li>
+              {/* {cart[item.idMeal] && cart[item.idMeal].quantity !== 0 ? ( */}
+              {quantity !== 0 ? (
+                <div className="cartItem__incrDec">
+                  <button
+                    className="incrDec-btn"
+                    onClick={() => dispatch(decrementQuantity(item))}
+                  >
+                    -
+                  </button>
+                  {/* <h4 className="num">{item.quantity || 0}</h4> */}
+
+                  <h4 className="num">{getTotalQuantity() || 0}</h4>
+
+                  <button
+                    className="incrDec-btn"
+                    // onClick={
+                    //   () => dispatch(addToCart(item))
+                    onClick={() => dispatch(incrementQuantity(item))}
+                  >
+                    +
+                  </button>
+                </div>
+              ) : (
+                <button
+                  className="add-btn"
+                  onClick={() => dispatch(addToCart(item))}
+                >
+                  Add
+                </button>
+              )}
             </ul>
           </div>
         ))}
@@ -126,29 +163,3 @@ const Mealitems = () => {
 };
 
 export default Mealitems;
-{
-  /* <img src="https://www.themealdb.com/images/media/meals/58oia61564916529.jpg"/> */
-}
-{
-  /* <img src="https://www.themealdb.com/images/ingredients/Lime-Small.png"/> */
-}
-{
-  /* <button onClick={(e) => dispatch(getMeal())}>Show Meals</button> */
-}
-
-{
-  /* {card &&
-          card.meals.map((e) => ( */
-}
-{
-  /* image: {e.strMealThumb} */
-}
-{
-  /* <img src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg/preview"/> */
-}
-{
-  /* <img src="https://www.themealdb.com/images/media/meals/bopa2i1683209167.jpg"/> */
-}
-{
-  /* <img src="https:\/\/www.themealdb.com\/images\/media\/meals\/ustsqw1468250014.jpg"/> */
-}
