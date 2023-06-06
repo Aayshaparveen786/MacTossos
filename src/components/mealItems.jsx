@@ -31,7 +31,14 @@ const Mealitems = ({ quantity = 0 }) => {
     dispatch(getMeal());
     // console.log("State", mealdetails);
   }, []);
+  // const itemInCart = useSelector((state) => state.cart.items);
 
+  // const itemInCart = useState((state) => state?.cart);
+  // console.log("itemIncart", itemInCart);
+  // const itemPresentInCart = itemInCart.find(
+  //   (item) => item?.id == mealdetails?.data?.meals?.id
+  // );
+  // console.log("itemP", itemInCart);
   // const [isFavorite, setFavorite] = useState();
 
   // console.log("favorite", isFavorite);
@@ -125,6 +132,7 @@ const Mealitems = ({ quantity = 0 }) => {
                 {item.strIngredient3}, {item.strIngredient4}
               </li>
               {/* {cart[item.idMeal] && cart[item.idMeal].quantity !== 0 ? ( */}
+              {/* {itemPresentInCart ? ( */}
               {quantity !== 0 ? (
                 <div className="cartItem__incrDec">
                   <button
