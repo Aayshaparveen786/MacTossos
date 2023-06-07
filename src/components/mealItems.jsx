@@ -37,8 +37,9 @@ const Mealitems = ({ quantity = 0 }) => {
   // console.log("itemIncart", itemInCart);
   // const itemPresentInCart = itemInCart.find(
   //   (item) => item?.id == mealdetails?.data?.meals?.id
-  // );
-  // console.log("itemP", itemInCart);
+  // );;
+  // console.log("itemP", itemInCart)
+
   // const [isFavorite, setFavorite] = useState();
 
   // console.log("favorite", isFavorite);
