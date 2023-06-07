@@ -139,7 +139,7 @@ const Contact = () => {
             <div className="Email-box">
               <TextField
                 sx={{
-                  width: "47ch",
+                  width: "30vw",
                   marginBottom: "1rem",
                   "& .MuiInputLabel-root.Mui-focused": {
                     color: "black",
@@ -202,7 +202,7 @@ const Contact = () => {
             </button>
           </div>
         </form>
-        <div style={{ height: "100vh", width: "100%" }}>
+        <div style={{ height: "100vh", width: "98vw" }}>
           <GoogleMapReact
             defaultCenter={defaultProps.center}
             defaultZoom={defaultProps.zoom}

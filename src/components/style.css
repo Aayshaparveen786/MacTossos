@@ -977,6 +977,28 @@ a {
     font-size: 35px;
     margin-bottom: 3rem;
   }
+
+  /* Contact Page Responsive */
+  .banner-box img {
+    height: 20vh;
+    width: 87vw;
+    margin-left: 0;
+  }
+
+  .col-1 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mes-btn {
+    font-size: 25px;
+    width: 60vw;
+  }
 }
 
 /* IPad */
