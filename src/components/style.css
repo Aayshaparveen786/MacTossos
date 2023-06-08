@@ -723,11 +723,6 @@ a {
   height: 50vh;
 }
 
-/* .search-heading{
-  text-align: center;
-  font-size: 50px;
-} */
-
 /* Responsive */
 @media (max-width: 768px) {
   .Nav-container {
@@ -753,21 +748,12 @@ a {
   }
 
   .Links-box {
-    /* width: 100vw; */
-    /* height: 100vh; */
-    /* position: absolute; */
-    /* top: -19%;
-    left: 0; */
-    /* background-color: white; */
     display: flex;
-    /* padding-top: 15vh; */
     margin-right: 8rem;
     align-content: center;
     flex-direction: column;
     text-align: center;
     transform: translateX(100%);
-    /* visibility: hidden; */
-    /* opacity: 0; */
   }
 
   .navbar-link:visited {
@@ -1029,10 +1015,6 @@ a {
     font-size: 25px;
     width: 60vw;
   }
-
-  /* About Page */
-  .About {}
-
 }
 
 /* IPad */
