@@ -18,14 +18,16 @@ const RazorpayIntegration = () => {
       amount: 10000, // amount in paise (e.g., 10000 paise = ₹100)
       name: "ANDAJ Company",
       description: "Purchase Description",
-      image: "https://example.com/your_logo.png",
+      // image: "https://example.com/your_logo.png",
+      image: "/images/food-logo.png",
+
       handler: function (response) {
         // Handle the payment success callback
         console.log(response);
       },
       prefill: {
-        email: "customer@example.com",
-        contact: "9999999999",
+        email: "aayshaparveen1012gmail.com",
+        contact: "7489322644",
       },
       theme: {
         color: "#F37254",
