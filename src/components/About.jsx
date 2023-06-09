@@ -111,6 +111,48 @@ const About = () => {
           <img src="./images/network.png" />
         </div>
       </div>
+      <section className="services" id="services">
+        <div className="top">
+          <h2>
+            <span className="yellow">Why</span> We are the Best
+          </h2>
+          <p>
+            Lorem ipsum is placeholder text commonly used in the graphic, print,
+            and publishing industries for previewing layouts and visual mockups.
+            Lorem ipsum is placeholder.
+          </p>
+        </div>
+
+        <div className="bottom">
+          <div className="box">
+            <img src="./images/delivery-man.svg" alt="" />
+            <h4>Free Delivery</h4>
+            <p>
+              Lorem ipsum dolor sit amet,adipiscing elit. Eu, montes, metus
+              porttitor consectetur pretium. Euismod imperdiet pellentesque
+              cursus in netus.
+            </p>
+          </div>
+          <div className="box">
+            <img src="./images/fast-food.svg" alt="" />
+            <h4>Healthy Foods</h4>
+            <p>
+              Lorem ipsum dolor sit amet,adipiscing elit. Eu, montes, metus
+              porttitor consectetur pretium. Euismod imperdiet pellentesque
+              cursus in netus.
+            </p>
+          </div>
+          <div className="box">
+            <img src="./images/order-food.svg" alt="" />
+            <h4>Online Ordering</h4>
+            <p>
+              Lorem ipsum dolor sit amet,adipiscing elit. Eu, montes, metus
+              porttitor consectetur pretium. Euismod imperdiet pellentesque
+              cursus in netus.
+            </p>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
