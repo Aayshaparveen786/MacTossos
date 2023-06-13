@@ -60,6 +60,7 @@ const Navbar = () => {
         <div className="Kitchen-heading">
           <a href="#" onClick={() => setOpenMenu(false)}>
             <img src="./images/Mactassos-logo_white.png" />
+            {/* <img src="./images/food-logo.png" /> */}
           </a>
         </div>
         <div className={openMenu ? "menuIcon active" : "menuIcon"}>

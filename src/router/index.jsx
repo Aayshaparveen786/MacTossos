@@ -11,51 +11,21 @@ import ForgotPassword from "../components/ForgotPassword";
 // eslint-disable-next-line camelcase
 import Create_account from "../components/Create_account";
 import Recipe from "../components/Recipe";
-import Payment from "../components/Payment";
 const MainFram = () => {
   return (
     <>
       <Routes>
         <Route path="/" element={<SignIn />} />
-        <Route
-          path="/ForgotPassword"
-          element={<ForgotPassword />}
-        />
-        <Route
-          path="/Create_account"
-          element={<Create_account />}
-        />
+        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/Create_account" element={<Create_account />} />
 
         <Route path="/Home" element={<Home />} />
-        <Route
-          path="/About"
-          element={<About />}
-        />
-        <Route
-          path="/Contact"
-          element={<Contact />}
-        />
-        <Route
-          path="/CartItem"
-          element={<CartItem />}
-        />
-        <Route
-          path="/FavoriteItem"
-          element={<FavoriteItem />}
-        />
-        <Route
-          path="/Search"
-          element={<Search />}
-        />
-        <Route
-          exact
-          path="/:recipeId"
-          element={<Recipe />}
-        />
-        <Route
-          path="/Payment"
-          element={<Payment />}
-        />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/CartItem" element={<CartItem />} />
+        <Route path="/FavoriteItem" element={<FavoriteItem />} />
+        <Route path="/Search" element={<Search />} />
+        <Route exact path="/:recipeId" element={<Recipe />} />
       </Routes>
     </>
   );

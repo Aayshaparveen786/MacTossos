@@ -14,7 +14,7 @@ const RazorpayIntegration = () => {
 
   const handlePayment = () => {
     const options = {
-      key: "rzp_test_UFJI0CQr38KOf5",
+      key: "rzp_test_eOzeE2vRVIU4Gq",
       amount: 10000, // amount in paise (e.g., 10000 paise = ₹100)
       name: "ANDAJ Company",
       description: "Purchase Description",
