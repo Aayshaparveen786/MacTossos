@@ -122,7 +122,7 @@ const Navbar = () => {
             <div className="cart">
               <AiOutlineShoppingCart color="white" size="2rem" />
 
-              <NavLink to="/CartItem">
+              <NavLink to="/Checkout">
                 <button className="cart-btn">{getTotalQuantity() || 0}</button>
               </NavLink>
             </div>

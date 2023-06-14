@@ -6,13 +6,17 @@ import {
   decrementQuantity,
   removeItem,
 } from "../redux/slice/mealSlice";
+import { NavLink } from "react-router-dom";
 // import { NavLink } from "react-router-dom";
-import RazorpayIntegration from "./Razorpay";
+// import RazorpayIntegration from "./Razorpay";
 
-const CartItem = ({ quantity = 0 }) => {
+const CartItem = ({ quantity = 0, onNext }) => {
   const mealdetails = useSelector((state) => state.mealdetails);
   console.log("mealDetails", mealdetails?.cart);
   const dispatch = useDispatch();
+  const handleOptionClick = (pageType) => {
+    onNext(pageType); // call the onNext function with pageType as an argument
+  };
   return (
     <>
       <div className="cart-container">
@@ -60,10 +64,11 @@ const CartItem = ({ quantity = 0 }) => {
                 +
               </button>
             </div>
-            {/* <NavLink to="/Payment">
-              <button className="cartItem__removeButton">Payment</button>
-            </NavLink> */}
-            <RazorpayIntegration />
+            {/* <button className="cartItem__removeButton">Payment</button> */}
+            {/* <RazorpayIntegration /> */}
+            <NavLink onClick={() => handleOptionClick("option2")}>
+              <button className="cartItem__removeButton">Continue</button>
+            </NavLink>
           </div>
         ))}
       </div>
