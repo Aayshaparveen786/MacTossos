@@ -11,8 +11,6 @@ const Address = ({ onNext }) => {
   };
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [designation, setDesignation] = useState("");
-  const [company, setCompany] = useState("");
   const [mobile, setMobile] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -93,25 +91,7 @@ const Address = ({ onNext }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="row-1">
-          <TextField
-            label="Designation"
-            className="name"
-            name="designation"
-            type="text"
-            value={designation}
-            onChange={handleChange}
-          />
 
-          <TextField
-            label="Company"
-            className="name"
-            name="company"
-            type="text"
-            value={company}
-            onChange={handleChange}
-          />
-        </div>
         <div className="row-1">
           <TextField
             label="Address Line1"

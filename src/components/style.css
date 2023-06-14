@@ -809,7 +809,7 @@ section.services {
 .step {
   font-size: 14px;
   text-align: center;
-  color: #666;
+  color: #b1afaf;
   cursor: default;
   margin: 3rem 0;
   padding: 10px 10px 10px 10px;
@@ -1181,6 +1181,12 @@ section.services {
   .mes-btn {
     font-size: 25px;
     width: 60vw;
+  }
+
+  .row-1 {
+    display: grid;
+    grid-template-columns: 0;
+    gap: 1rem;
   }
 }
 
