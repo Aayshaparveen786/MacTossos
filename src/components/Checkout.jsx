@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import CartItem from "../components/CartItems";
 import RazorpayIntegration from "./Razorpay";
 import Address from "./Address";
+import TrackingOrder from "./Trackingorder";
+// import TrackingOrder from "./Trackingorder";
 
 function Checkout() {
   const [currentStep, setCurrentStep] = useState(0);
@@ -21,6 +23,10 @@ function Checkout() {
     {
       label: "Payment",
       content: <RazorpayIntegration onNext={() => handleNext()} />,
+    },
+    {
+      label: "Tracking Order",
+      content: <TrackingOrder onNext={() => handleNext()} />,
     },
   ];
 
