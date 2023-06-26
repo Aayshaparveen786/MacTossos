@@ -1,7 +1,6 @@
-import {
-  Visibility,
-  VisibilityOff,
-} from "@mui/icons-material";
+/* eslint-disable no-unused-vars */
+/* eslint-disable require-jsdoc */
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   FormControl,
   IconButton,
@@ -15,31 +14,25 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 const SignIn = () => {
-  const handleClickShowPassword = () =>
-    setShowPassword((show) => !show);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
   // Validation
-  const [showPassword, setShowPassword] =
-    React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const [EmailErrorMsg, setEmailErrorMsg] =
-    useState("");
-  const [PasswordErrorMsg, setPasswordErrorMsg] =
-    useState("");
-  const [showEmailError, setShowEmailError] =
-    useState(false);
-  const [
-    showPasswordError,
-    setShowPasswordError,
-  ] = useState(false);
+  const [EmailErrorMsg, setEmailErrorMsg] = useState("");
+  const [PasswordErrorMsg, setPasswordErrorMsg] = useState("");
+  const [showEmailError, setShowEmailError] = useState(false);
+  const [showPasswordError, setShowPasswordError] = useState(false);
 
   const handleEmail = (e) => {
     console.log("output", e.target.value);
-
+    const elt = document.getElementById("Emailid");
+    // console.log("enable", elt);
+    elt.value = elt.value.toUpperCase();
     if (e.target.name == "Email") {
       setEmail(e.target.value);
       setEmailErrorMsg("");
@@ -47,22 +40,18 @@ const SignIn = () => {
     }
     if (e.target.value == "") {
       setShowEmailError(true);
-      setEmailErrorMsg(
-        "Email address is required"
-      );
+      setEmailErrorMsg("Email address is required");
     }
-    if (
-      Email.length > 0 &&
-      !/\S+@\S+\.\S+/.test(Email)
-    ) {
+    if (Email.length > 0 && !/\S+@\S+\.\S+/.test(Email)) {
       setShowEmailError(true);
-      setEmailErrorMsg(
-        "Email address format is invalid."
-      );
+      setEmailErrorMsg("Email address format is invalid.");
     }
   };
 
   const handlePassword = (e) => {
+    const elt = document.getElementById("test");
+    // console.log("enable", elt);
+    elt.value = elt.value.toUpperCase();
     console.log("output", e.target.value);
     if (e.target.name == "Password") {
       setPassword(e.target.value);
@@ -73,14 +62,9 @@ const SignIn = () => {
       setShowPasswordError(true);
       setPasswordErrorMsg("Password is required");
     }
-    if (
-      e.target.value.length < 8 &&
-      e.target.value.length > 0
-    ) {
+    if (e.target.value.length < 8 && e.target.value.length > 0) {
       setShowPasswordError(true);
-      setPasswordErrorMsg(
-        "Password must be alteast 8 characters"
-      );
+      setPasswordErrorMsg("Password must be alteast 8 characters");
     }
   };
   const handleSignIn = (e) => {
@@ -94,13 +78,13 @@ const SignIn = () => {
       </div>
       {/* </div> */}
       <div className="signin_container">
-        <h1 className="signin_heading">
-          Sign In
-        </h1>
+        <h1 className="signin_heading">Sign In</h1>
         <form className="form_box">
           <div className="email-box">
             <TextField
-              id="standard-basic"
+              id="Emailid"
+              type="text"
+              // id="standard-basic"
               label="Email address"
               name="Email"
               variant="standard"
@@ -108,19 +92,16 @@ const SignIn = () => {
               sx={{
                 width: "63ch",
                 marginBottom: "2rem",
-                "& .MuiInputLabel-root.Mui-focused":
-                  {
-                    color: "black",
-                  },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
                 "& .MuiInputBase-root:after": {
                   borderBottom: "2px solid black",
                 },
               }}
             />
             {showEmailError == true ? (
-              <p className="error-Etext">
-                {EmailErrorMsg}
-              </p>
+              <p className="error-Etext">{EmailErrorMsg}</p>
             ) : null}
           </div>
           <div className="password-box">
@@ -128,10 +109,9 @@ const SignIn = () => {
               sx={{
                 m: 1,
                 width: "63ch",
-                "& .MuiInputLabel-root.Mui-focused":
-                  {
-                    color: "black",
-                  },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
                 "& .MuiInputBase-root:after": {
                   borderBottom: "2px solid black",
                 },
@@ -143,63 +123,39 @@ const SignIn = () => {
               </InputLabel>
               <Input
                 name="Password"
+                id="test"
                 onChange={handlePassword}
-                id="standard-adornment-password"
-                type={
-                  showPassword
-                    ? "text"
-                    : "password"
-                }
+                // id="standard-adornment-password"
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={
-                        handleClickShowPassword
-                      }
-                      onMouseDown={
-                        handleMouseDownPassword
-                      }
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
                     >
-                      {showPassword ? (
-                        <VisibilityOff />
-                      ) : (
-                        <Visibility />
-                      )}
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
               />
             </FormControl>
             {showPasswordError == true ? (
-              <p className="error-Ptext">
-                {PasswordErrorMsg}
-              </p>
+              <p className="error-Ptext">{PasswordErrorMsg}</p>
             ) : null}
           </div>
           <div className="last-para">
             <div className="F-box">
-              <Link
-                to="./ForgotPassword"
-                className="F-password"
-              >
+              <Link to="./ForgotPassword" className="F-password">
                 Forgot password
               </Link>
             </div>
             <div className="terma_condation_section">
-              By signing in, you have read and
-              agree to our
-              <a>
-                MacTossos General Terms and
-                Conditions.
-              </a>
-              For more details on how we use the
-              information we collect about you,
-              please read our <br />
-              <a>
-                MacTossos Privacy and Cookie
-                Policy.
-              </a>
+              By signing in, you have read and agree to our
+              <a>MacTossos General Terms and Conditions.</a>
+              For more details on how we use the information we collect about
+              you, please read our <br />
+              <a>MacTossos Privacy and Cookie Policy.</a>
             </div>
           </div>
         </form>
@@ -207,11 +163,7 @@ const SignIn = () => {
           <div className="sign_btn">
             <Link to="./Home">
               <button
-                className={
-                  Password == ""
-                    ? "disable-btn"
-                    : "enable-btn"
-                }
+                className={Password == "" ? "disable-btn" : "enable-btn"}
                 onClick={handleSignIn}
                 disabled={!Password}
               >
@@ -222,9 +174,7 @@ const SignIn = () => {
           <span className="OR-text">or</span>
           <div className="Create-btn-box">
             <Link to="./Create_account">
-              <button className="Create-btn">
-                Create an account
-              </button>
+              <button className="Create-btn">Create an account</button>
             </Link>
           </div>
         </div>
