@@ -1,8 +1,5 @@
 /* eslint-disable camelcase */
-import {
-  Visibility,
-  VisibilityOff,
-} from "@mui/icons-material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   FormControl,
   IconButton,
@@ -15,44 +12,30 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 // eslint-disable-next-line camelcase
 const Create_account = () => {
-  const handleClickShowPassword = () =>
-    setShowPassword((show) => !show);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
   };
 
   // Validation
-  const [showPassword, setShowPassword] =
-    React.useState(false);
+  const [showPassword, setShowPassword] = React.useState(false);
   const [Email, setEmail] = useState("");
   const [Password, setPassword] = useState("");
-  const [EmailErrorMsg, setEmailErrorMsg] =
-    useState("");
-  const [showEmailError, setShowEmailError] =
-    useState(false);
+  const [EmailErrorMsg, setEmailErrorMsg] = useState("");
+  const [showEmailError, setShowEmailError] = useState(false);
   const [Firstname, setFirstname] = useState("");
-  const [showFnameError, setShowFnameError] =
-    useState(false);
-  const [
-    FirstnameErrorMsg,
-    setFirstnameErrorMsg,
-  ] = useState("");
+  const [showFnameError, setShowFnameError] = useState(false);
+  const [FirstnameErrorMsg, setFirstnameErrorMsg] = useState("");
   // eslint-disable-next-line no-unused-vars
   const [Lastname, setLastname] = useState("");
-  const [showLnameError, setShowLnameError] =
-    useState(false);
-  const [LastnameErrorMsg, setLastnameErrorMsg] =
-    useState("");
+  const [showLnameError, setShowLnameError] = useState(false);
+  const [LastnameErrorMsg, setLastnameErrorMsg] = useState("");
   // valid states
-  const [lowerValidated, setLowerValidated] =
-    useState(false);
-  const [upperValidated, setUpperValidated] =
-    useState(false);
-  const [numberValidated, setNumberValidated] =
-    useState(false);
-  const [lengthValidated, setLengthValidated] =
-    useState(false);
+  const [lowerValidated, setLowerValidated] = useState(false);
+  const [upperValidated, setUpperValidated] = useState(false);
+  const [numberValidated, setNumberValidated] = useState(false);
+  const [lengthValidated, setLengthValidated] = useState(false);
   const handleFirstnameChange = (e) => {
     if (e.target.name == "Firstname") {
       setFirstname(e.target.value);
@@ -62,9 +45,7 @@ const Create_account = () => {
       console.log("false", Firstname);
 
       setShowFnameError(true);
-      setFirstnameErrorMsg(
-        "First name is required."
-      );
+      setFirstnameErrorMsg("First name is required.");
       // console.log("output", e.target.value);
     }
   };
@@ -75,9 +56,7 @@ const Create_account = () => {
     }
     if (e.target.value == "") {
       setShowLnameError(true);
-      setLastnameErrorMsg(
-        "Last name is required."
-      );
+      setLastnameErrorMsg("Last name is required.");
       console.log("output", e.target.value);
     }
   };
@@ -87,20 +66,13 @@ const Create_account = () => {
       setEmailErrorMsg("");
       setShowEmailError(false);
     }
-    if (
-      Email.length > 0 &&
-      !/\S+@\S+\.\S+/.test(e.target.value)
-    ) {
+    if (Email.length > 0 && !/\S+@\S+\.\S+/.test(e.target.value)) {
       setShowEmailError(true);
-      setEmailErrorMsg(
-        "Email address format is invalid."
-      );
+      setEmailErrorMsg("Email address format is invalid.");
     }
     if (e.target.value == "") {
       setShowEmailError(true);
-      setEmailErrorMsg(
-        "Email address format is invalid."
-      );
+      setEmailErrorMsg("Email address format is invalid.");
     }
   };
   const handlePassword = (e) => {
@@ -147,22 +119,18 @@ const Create_account = () => {
         </div>
       </div>
       <div className="Account_container">
-        <div className="create_heading">
-          Create an account with email.
-        </div>
+        <div className="create_heading">Create an account with email.</div>
         <form className="Create_form">
           <div className="two-box-1">
             <div className="Firstname-box">
               <TextField
                 sx={{
                   width: "19vw",
-                  "& .MuiInputLabel-root.Mui-focused":
-                    {
-                      color: "black",
-                    },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "black",
+                  },
                   "& .MuiInputBase-root:after": {
-                    borderBottom:
-                      "2px solid black",
+                    borderBottom: "2px solid black",
                   },
                 }}
                 id="standard-basic1"
@@ -172,22 +140,18 @@ const Create_account = () => {
                 variant="standard"
               />
               {showFnameError == true ? (
-                <p className="error-nametext-account">
-                  {FirstnameErrorMsg}
-                </p>
+                <p className="error-nametext-account">{FirstnameErrorMsg}</p>
               ) : null}
             </div>
             <div className="Lastname-box">
               <TextField
                 sx={{
                   width: "19vw",
-                  "& .MuiInputLabel-root.Mui-focused":
-                    {
-                      color: "black",
-                    },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "black",
+                  },
                   "& .MuiInputBase-root:after": {
-                    borderBottom:
-                      "2px solid black",
+                    borderBottom: "2px solid black",
                   },
                 }}
                 id="standard-basic2"
@@ -197,9 +161,7 @@ const Create_account = () => {
                 variant="standard"
               />
               {showLnameError == true ? (
-                <p className="error-nametext-account">
-                  {LastnameErrorMsg}
-                </p>
+                <p className="error-nametext-account">{LastnameErrorMsg}</p>
               ) : null}
             </div>
           </div>
@@ -209,10 +171,9 @@ const Create_account = () => {
               sx={{
                 width: "63ch",
                 marginBottom: "1rem",
-                "& .MuiInputLabel-root.Mui-focused":
-                  {
-                    color: "black",
-                  },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
                 "& .MuiInputBase-root:after": {
                   borderBottom: "2px solid black",
                 },
@@ -224,17 +185,14 @@ const Create_account = () => {
               variant="standard"
             />
             {showEmailError == true ? (
-              <p className="error-Etext-account">
-                {EmailErrorMsg}
-              </p>
+              <p className="error-Etext-account">{EmailErrorMsg}</p>
             ) : null}
             <FormControl
               sx={{
                 width: "63ch",
-                "& .MuiInputLabel-root.Mui-focused":
-                  {
-                    color: "black",
-                  },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: "black",
+                },
                 "& .MuiInputBase-root:after": {
                   borderBottom: "2px solid black",
                 },
@@ -249,27 +207,15 @@ const Create_account = () => {
                 name="Password"
                 onChange={handlePassword}
                 id="standard-adornment-password"
-                type={
-                  showPassword
-                    ? "text"
-                    : "password"
-                }
+                type={showPassword ? "text" : "password"}
                 endAdornment={
                   <InputAdornment position="end">
                     <IconButton
                       aria-label="toggle password visibility"
-                      onClick={
-                        handleClickShowPassword
-                      }
-                      onMouseDown={
-                        handleMouseDownPassword
-                      }
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
                     >
-                      {showPassword ? (
-                        <VisibilityOff />
-                      ) : (
-                        <Visibility />
-                      )}
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 }
@@ -325,17 +271,15 @@ const Create_account = () => {
             </div>
           </div>
           <div className="Create_btn">
-            <button
-              className={
-                Password == ""
-                  ? "disable-btn"
-                  : "enable-btn"
-              }
-              onClick={handleCreate}
-              disabled={!Password}
-            >
-              Create an account
-            </button>
+            <Link to="/Home">
+              <button
+                className={Password == "" ? "disable-btn" : "enable-btn"}
+                onClick={handleCreate}
+                disabled={!Password}
+              >
+                Create an account
+              </button>
+            </Link>
           </div>
           <div className="last_box">
             Already have an account ?
